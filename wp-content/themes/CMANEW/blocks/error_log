@@ -1,0 +1,1 @@
+[03-Jan-2014 14:14:14] PHP Fatal error:  Call to undefined function  home_url() in /home/cmany/public_html/wp-content/themes/CMANEW/blocks/event_mini_calendar.php on line 42
