@@ -5,10 +5,11 @@
 
 ?>
 <!--PAGE-NEW-->
-<div id="page-new">
+<div id="page-new" class="container">
   <!--PAGE-CONTAINER -->
 
   <div class="new_page" id="page-container">
+    <div class="ten columns">
     <div class="block">
       <h2 class="page-title">Calendar</h2>
     </div>
@@ -63,7 +64,7 @@
           <div class="cal_browseby">
             <span class="left">Browse By:</span>
             <ul>
-            	<li>Age
+            	<li><a class="calFilt">Age</a>
 	            	<ul>
 						<?php
 							parse_str($parseURL['query'], $vars);
@@ -71,25 +72,25 @@
 							$queryString = http_build_query($vars);
 							$filters = get_terms('age','hide_empty=0');
 							foreach($filters as $filter){
-								echo "<li><a tabindex='-1' href='".$baseURL."?".$queryString."&filtAge=".$filter->slug."'>".$filter->name."</a></li>";
+								echo "<li><a tabindex='-1' href='".$baseURL."?".$queryString."&amp;filtAge=".$filter->slug."'>".$filter->name."</a></li>";
 							}
 						?>
 	            	</ul>
             	</li>
-            	<li>Categories
+            	<li><a class="calFilt">Categories</a>
 	            	<ul>
 						<?php
 							parse_str($parseURL['query'], $vars);
 							unset($vars['filtCat']);
 							$queryString = http_build_query($vars);
-							$filters = get_terms('category',"hide_empty=0&exclude=164,163,130,,217");
+							$filters = get_terms('category',"hide_empty=0&amp;exclude=164,163,130,,217");
 							foreach($filters as $filter){
-								echo "<li><a tabindex='-1' href='".$baseURL."?".$queryString."&filtCat=".$filter->slug."'>".$filter->name."</a></li>";
+								echo "<li><a tabindex='-1' href='".$baseURL."?".$queryString."&amp;filtCat=".$filter->slug."'>".$filter->name."</a></li>";
 							}
 						?>
 	            	</ul>
             	</li>
-            	<li>Location
+            	<li><a class="calFilt">Location</a>
 	            	<ul>
 						<?php
 							parse_str($parseURL['query'], $vars);
@@ -97,7 +98,7 @@
 							$queryString = http_build_query($vars);
 							$filters = get_terms('location','hide_empty=0');
 							foreach($filters as $filter){
-								echo "<li><a tabindex='-1' href='".$baseURL."?".$queryString."&filtLoc=".$filter->slug."'>".$filter->name."</a></li>";
+								echo "<li><a tabindex='-1' href='".$baseURL."?".$queryString."&amp;filtLoc=".$filter->slug."'>".$filter->name."</a></li>";
 							}
 						?>
 	            	</ul>
@@ -139,9 +140,10 @@
     		<button class="feedBack">Go back</button>
     	</div>
     </div><!--END cal main columns-->
-
+  </div> <!-- end ten columns -->
 
     <!--EVENT SIDEBAR-->
+    <div class="two columns">
     <div id="event_sidebar">
 
       <div id="event_mini_calendar">
@@ -168,8 +170,9 @@
       </div>
 
     </div>
+  </div> <!-- end two columns -->
 
-    <div class="clear">&nbsp;</div>
+    <div class="clear" aria-hidden="true">&nbsp;</div>
     <!--CLEAR-->
 
 

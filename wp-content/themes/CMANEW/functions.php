@@ -402,7 +402,7 @@ function tabs_group( $atts, $content = null ) {
 
 
 
-    $output = '<div id="'.$id.'" class="newtabs"><ul role="tablist" class="tabs"   ';
+    $output = '<div id="'.$id.'" class="newtabs"><ul role="tablist" class="tabs"  ';
 
 
     $output.='>'.do_shortcode($content).'</ul>';
@@ -438,7 +438,7 @@ function tab($atts, $content = null) {
         </li>
     ';
 
-    $tabs_divs.= '<div role="tabpanel" id="'.$id.'" class="pane '.$activeClass.'" >'.do_shortcode($content).'</div>';
+    $tabs_divs.= '<div role="tabpanel" id="'.$id.'" class="pane '.$activeClass.'" tabindex="0">'.do_shortcode($content).'</div>';
 
     return $output;
 }

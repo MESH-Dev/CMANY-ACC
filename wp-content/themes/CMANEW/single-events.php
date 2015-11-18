@@ -101,7 +101,7 @@
 	        <!-- MAIN CONTENT -->
 	        <div class="<?php echo $thumbnail; ?>-content">
 
-	        	<div class="single-event-time">
+	        	<div class="single-event-time"><span class="sr-only">Event Time</span>
 
 			   <?php
 
@@ -142,7 +142,7 @@
 			   <?php the_field('start'); ?> -<?php  the_field('end');?>
 			    </div>
 
-			      <div class="single-event-location">
+			      <div class="single-event-location"><span class="sr-only">Location</span>
 			   <?php
 			            $locations = get_the_terms($post->ID, 'location' );
 			            $separator = ',';
@@ -157,7 +157,7 @@
 			        ?>
 			    </div>
 
-	        	<div class="single-event-cats">
+	        	<div class="single-event-cats"><span class="sr-only">Category</span>
 			   <?php
 			            $categories = get_the_category();
 			            $separator = ',';
@@ -173,7 +173,7 @@
 			    </div>
 
 
-			    <div class="single-event-ages">
+			    <div class="single-event-ages"><span class="sr-only">Age groups</span>
 			   <?php
 			            $ages = get_the_terms($post->ID, 'age' );
 			            $separator = ', ';

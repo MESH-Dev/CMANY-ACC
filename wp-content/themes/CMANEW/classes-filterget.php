@@ -4,6 +4,7 @@
 	<h4>Season</h4>
 	<select name="season">
 		<option value=""></option>
+		<label for="season" class="sr-only">Filter by season</label>
 		<?php $terms = get_terms('classseason');
 		foreach($terms as $term){
 			if(isset($_GET['season']) && $_GET['season'] == $term->slug){
@@ -19,6 +20,7 @@
 	<h4>Category</h4>
 	<select name="category">
 		<option value=""></option>
+		<label for="category" class="sr-only">Filter by category</label>
 		<?php $terms = get_terms('classdepartment');
 		foreach($terms as $term){
 			if(isset($_GET['category']) && $_GET['category'] == $term->slug){
@@ -34,6 +36,7 @@
 	<h4>Age</h4>
 	<select name="age">
 	<option value=""></option>
+	<label for="age" class="sr-only">Filter by age</label>
 	<?php $terms = get_terms('classages');
 	foreach($terms as $term){
 		if(isset($_GET['age']) && $_GET['age'] == $term->slug){
@@ -49,6 +52,7 @@
 	<h4>Location</h4>
 	<select name="location">
 	<option value=""></option>
+	<label for="location" class="sr-only">Filter by location</label>
 	<?php $terms = get_terms('classlocation');
 	foreach($terms as $term){
 		if(isset($_GET['location']) && $_GET['location'] == $term->slug){
@@ -65,6 +69,7 @@
 
 	<select name="week">
 	<option value=""></option>
+	<label for="week" class="sr-only">Filter by week</label>
 	<?php
 		$isLeap = date('L');
 		$currentYear = date('Y');

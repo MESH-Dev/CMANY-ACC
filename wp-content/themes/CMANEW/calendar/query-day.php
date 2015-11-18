@@ -290,7 +290,7 @@
 		          if($fields['featured'] == "Yes") { ?>
 		      <div class="event_featured_icon">
 
-		            <img src="<?php bloginfo( 'template_url' ); ?>/images/event-featured.png" >
+		            <img alt="Featured event" src="<?php bloginfo( 'template_url' ); ?>/images/event-featured.png" >
 
 		      </div>
 		<?php } ?>

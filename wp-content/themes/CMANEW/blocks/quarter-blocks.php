@@ -9,6 +9,7 @@ $col4_donate = get_field('col4_donate');
 
 ?>
 <!--Q1-->
+<div class="three columns">
 <div class="quarter first">
 <?php foreach($col1 as $row){ ?>
 <a href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">
@@ -26,9 +27,11 @@ $col4_donate = get_field('col4_donate');
 </a>
 <?php } ?>
 </div>
+</div>
 
 
 <!--Q2-->
+<div class="three columns">
 <div class="quarter">
 
 <!--CALENDAR-->
@@ -52,8 +55,10 @@ $col4_donate = get_field('col4_donate');
 </a>
 <?php } ?>
 </div>
+</div>
 
 <!--Q3-->
+<div class="three columns">
 <div class="quarter three">
 
 <?php foreach($col3_blog as $row){ ?>
@@ -86,12 +91,11 @@ $col4_donate = get_field('col4_donate');
     </div>
   </a>
 <?php } ?>
-</div> <!-- End Q3 -->
+</div> </div><!-- End Q3 -->
 
 <!--Q4-->
+<div class="three columns">
 <div class="quarter last">
-
-
 
 <?php foreach($col4_advisory as $row){ ?>
         <div class="block-home">
@@ -154,6 +158,7 @@ $col4_donate = get_field('col4_donate');
         </div>
       </a>
 <?php } ?>
+</div>
 </div>
 
 

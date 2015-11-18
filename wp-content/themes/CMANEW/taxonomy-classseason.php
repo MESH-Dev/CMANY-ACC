@@ -25,7 +25,7 @@
      <?php echo get_the_title($post->ID); ?>
         </a>
       </h2>
-      <div class="event_location">
+      <div class="event_location"><span class="sr-only">Location</span>
    <?php
             $locations = get_the_terms($post->ID, 'location' );
             $separator = ',';
@@ -40,7 +40,7 @@
             }
         ?>
       </div>
-       <div class="event_cats">
+       <div class="event_cats"><span class="sr-only">Category</span>
    <?php
             $categories = get_the_category();
             $separator = ',';
@@ -58,7 +58,7 @@
       </div>
 
 
-      <div class="event_ages">
+      <div class="event_ages"><span class="sr-only">Age groups</span>
    <?php
             $ages = get_the_terms($post->ID, 'age' );
             $separator = ',';
@@ -74,7 +74,7 @@
         ?>
       </div>
 
-      <div class="event_time">
+      <div class="event_time"><span class="sr-only">Event Time</span>
    <?php echo get_field('start').' - '.get_field('end'); ?>
       </div>
 
@@ -96,7 +96,7 @@
  <?php } ?>
 
 
-      <div class="event_content">
+      <div class="event_content"><span class="sr-only">Location</span>
    <?php //echo get_post_field('post_content', $post->ID);?>
    <?php  echo get_excerpt_by_id($post->ID); ?>
         <a class="event_more" href="<?php echo get_permalink($post->ID); ?>">
@@ -131,12 +131,12 @@
 
 
   		<?php $meta_values = get_post_meta( 9211, 'sidebar_callout', true ); ?>
-  		<?php if($meta_values){ ?>
+  		<?php if($meta_values){ //If an event post is marked featured, it will show up here?>
       	 <div id="event-callout">
 		  	 <div class="gutter">
 		  	 	<?php echo $meta_values; ?>
 		  	 </div>
-		  	 <div id="callout-caret"></div>
+		  	 <div id="callout-caret" aria-hidden="true"></div>
 		 </div>
  <?php } ?>
 
@@ -149,7 +149,7 @@
 
     </div>
 
-    <div class="clear">&nbsp;</div>
+    <div class="clear" aria-hidden="true">&nbsp;</div>
     <!--CLEAR-->
 
 

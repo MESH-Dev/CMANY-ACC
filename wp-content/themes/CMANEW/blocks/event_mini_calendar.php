@@ -12,11 +12,19 @@ function draw_calendar($month,$year,$month_name){
 
 	/* draw table */
 
-	$calendar = '<table cellpadding="0" cellspacing="0" class="calendar">';
+	$calendar = '<table cellpadding="0" cellspacing="0" class="calendar">'; //
 
 	/* table headings */
-	$headings = array('Su','Mo','Tu','We','Th','Fr','Sa');
-	$calendar.= '<tr class="calendar-row"><td class="calendar-day-head">'.implode('</td><td class="calendar-day-head">',$headings).'</td></tr>';
+	$headings = array(
+		'<span aria-hidden="true">Su</span><span class="sr-only">Sunday</span>',
+		'<span aria-hidden="true">Mo</span><span class="sr-only">Monday</span>',
+		'<span aria-hidden="true">Tu</span><span class="sr-only">Tuesday</span>',
+		'<span aria-hidden="true">We</span><span class="sr-only">Wednesday</span>',
+		'<span aria-hidden="true">Th</span><span class="sr-only">Thursday</span>',
+		'<span aria-hidden="true">Fr</span><span class="sr-only">Friday</span>',
+		'<span aria-hidden="true">Sa</span><span class="sr-only">Saturday</span>');
+	//$headings = array('Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa');
+	$calendar.= '<tr class="calendar-row"><th scope="col" class="calendar-day-head">'.implode('</th><th scope="col" class="calendar-day-head">',$headings).'</th></tr>';
 
 	/* days and weeks vars now ... */
 	$running_day = date('w',mktime(0,0,0,$month,1,$year));
@@ -39,7 +47,7 @@ function draw_calendar($month,$year,$month_name){
 		$calendar.= '<td class="calendar-day">';
 			/* add in the day number */
 			$calendar.= '<div class="day-number">';
-			$calendar.="<a href='http://cmany.org/events/?view=day&Smonth=$month&Syear=$year&Sday=$list_day'>";
+			$calendar.="<a href='http://cmany-acc.bkfk-t5yk.accessdomain.com/events/?view=day&Smonth=$month&Syear=$year&Sday=$list_day'>";
 			$calendar.= $list_day.$week;
 			$calendar.= "</a>";
 			$calendar.='</div>';
@@ -117,7 +125,7 @@ if(isset($_GET['Syear'])){
 	$current_year = $_GET['Syear'];
 }
 
-echo "<div data-tofrom='prev' class='calTrig' id='prevMonth'>&#8672; </div><h2 data-month='".$month_num."' data-year='".$render_year."'>$month $current_year</h2><div data-tofrom='next' class='calTrig' id='nextMonth'>&#8674; </div>";
+echo "<a data-tofrom='prev' class='calTrig' id='prevMonth'><span aria-hidden='true'>&#8672;</span> <span class='sr-only'>Previous Month<span></a><h2 data-month='".$month_num."' data-year='".$render_year."'><span class='sr-only'>Calendar for </span> $month $current_year</h2><a data-tofrom='next' class='calTrig' id='nextMonth'><span aria-hidden='true'>&#8674;</span> <span class='sr-only'>Next Month</span></a>";
 echo draw_calendar($month_num,2015,$current_month);
 //echo draw_calendar(8,2013);
 

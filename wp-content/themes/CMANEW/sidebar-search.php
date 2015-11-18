@@ -10,7 +10,7 @@
 ?>
 <div id="page-new" >
 <div id="sidebar-new">
-    			<a href="http://www.cmany.org">	<img src="<?php bloginfo( 'template_url' ) ?>/images/cma-logo.jpg" /> </a>	
+    			<a href="http://www.cmany.org">	<img alt="Return to the CMANY homepage" src="<?php bloginfo( 'template_url' ) ?>/images/cma-logo.jpg" /> </a>	
                  
 
 
@@ -50,7 +50,7 @@
         </div>
      </div>
 
-     				<div class="clear"></div>
+     				<div class="clear" aria-hidden="true"></div>
 
 
 </div><!-- sidebar -->

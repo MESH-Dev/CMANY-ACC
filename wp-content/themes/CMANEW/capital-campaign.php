@@ -53,7 +53,7 @@ get_header('navnew2');
    <?php while(the_repeater_field('slideshow_campaign')): ?>
                                            <div class="block" id="hide">
 													<?php if(get_sub_field('campaign_image')) { $slide = wp_get_attachment_image_src(get_sub_field('campaign_image'), 'full') ?>
-                                                    <img src="<?php bloginfo( 'template_url' ); ?>/timthumb.php?src=<?php echo $slide[0]; ?>&h=333&w=635&zc=1" alt="<?php the_sub_field('campaign_caption'); ?> " />
+                                                    <img src="<?php bloginfo( 'template_url' ); ?>/timthumb.php?src=<?php echo $slide[0]; ?>&amp;h=333&amp;w=635&amp;zc=1" alt="<?php the_sub_field('campaign_caption'); ?> " />
                                       <?php } ?>
 
                                                     <div class="block">
@@ -155,7 +155,7 @@ get_header('navnew2');
                                  <div class="pane">
 
                        <?php if(get_field('use_of_funds_image')) { $slide2 = wp_get_attachment_image_src(get_field('use_of_funds_image'), 'full') ?>
-                                      <img src="<?php bloginfo( 'template_url' ); ?>/timthumb.php?src=<?php echo $slide2[0]; ?>&w=635&zc=0" alt="<?php the_field('use_of_funds'); ?>" />
+                                      <img src="<?php bloginfo( 'template_url' ); ?>/timthumb.php?src=<?php echo $slide2[0]; ?>&amp;w=635&amp;zc=0" alt="<?php the_field('use_of_funds'); ?>" />
                         <?php } ?>
                                  </div>   <!-- pane -->
 
@@ -190,7 +190,7 @@ $remainderStrip=str_replace(",", "", get_field('remainder'));
 ?>
 
 <?php if(get_field('fundrasing_graph')) { $slide = wp_get_attachment_image_src(get_field('fundrasing_graph'), 'full') ?>
-                                                    <img src="<?php bloginfo( 'template_url' ); ?>/timthumb.php?src=<?php echo $slide[0]; ?>&w=196&zc=0" alt="" />
+                                                    <img src="<?php bloginfo( 'template_url' ); ?>/timthumb.php?src=<?php echo $slide[0]; ?>&amp;w=196&amp;zc=0" alt="" />
 <?php } ?>
 
 <!---

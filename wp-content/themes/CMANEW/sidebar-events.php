@@ -88,7 +88,7 @@ while(the_repeater_field('sidebar_item')): ?>
 
 
               </div>
-              <div id="callout-caret"></div>
+              <div id="callout-caret" aria-hidden="true"></div>
           </div>
    <?php endif; ?>
 

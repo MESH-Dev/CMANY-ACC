@@ -1,8 +1,9 @@
- <form method="POST" action="">
+ <form method="POST">
 <h2>Filter By:</h2>
 <div class="filterCont">
 	<h4>Season</h4>
-	<select name="season">
+	<label for="season" class="sr-only">Filter by season</label>
+	<select id="season" name="season">
 		<option value=""></option>
 		<?php $terms = get_terms('classseason');
 		foreach($terms as $term){
@@ -17,7 +18,8 @@
 
 <div class="filterCont">
 	<h4>Category</h4>
-	<select name="category">
+	<label for="category" class="sr-only">Filter by category</label>
+	<select id="category" name="category">
 		<option value=""></option>
 		<?php $terms = get_terms('classdepartment');
 		foreach($terms as $term){
@@ -32,7 +34,8 @@
 
 <div class="filterCont">
 	<h4>Age</h4>
-	<select name="age">
+	<label for="age" class="sr-only">Filter by age</label>
+	<select id="age" name="age">
 	<option value=""></option>
 	<?php $terms = get_terms('classages');
 	foreach($terms as $term){
@@ -47,7 +50,8 @@
 
 <div class="filterCont">
 	<h4>Location</h4>
-	<select name="location">
+	<label for="location" class="sr-only">Filter by location</label>
+	<select id="location" name="location">
 	<option value=""></option>
 	<?php $terms = get_terms('classlocation');
 	foreach($terms as $term){
@@ -62,7 +66,8 @@
 
 <div class="filterCont">
 	<h4>Week</h4>
-	<select name="week">
+	<label for="week" class="sr-only">Filter by week</label>
+	<select id="week" name="week">
 	<option value=""></option>
 	<?php
 		$isLeap = date('L');

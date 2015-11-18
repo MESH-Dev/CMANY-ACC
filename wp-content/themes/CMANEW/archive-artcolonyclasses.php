@@ -36,7 +36,7 @@
 	            			echo 'class="active"';
             			}
             		}
-            	?> id="daily" href="<?php echo site_url(); ?>/classes-calendar/?cur_month=<?php echo $nnow_month; if($new_yr){echo'&cur_year='.$new_yr;}?>&view=day&today=<?php echo $now_day;?>" >Daily</a>
+            	?> id="daily" href="<?php echo site_url(); ?>/classes-calendar/?cur_month=<?php echo $nnow_month; if($new_yr){echo'&cur_year='.$new_yr;}?>&amp;view=day&today=<?php echo $now_day;?>" >Daily</a>
 
             <a<?php
             		if(!isset($_GET['view'])){
@@ -109,11 +109,11 @@
         <div class="block calendar_nav">
 <?php $viewMode = $_GET['view'];
 			if($viewMode == 'day'){ ?>
-			 	<div id="cal_prev_week"><a href="<?php echo site_url(); ?>/classes-calendar/?cur_month=<?php echo $prevDayM; ?>&cur_year=<?php echo $prevDayY; ?>&view=day&today=<?php echo $prevDayD; ?>">Prev Day</a></div>
-			 	<div id="cal_next_week"><a href="<?php echo site_url(); ?>/classes-calendar/?cur_month=<?php echo $nextDayM; ?>&cur_year=<?php echo $nextDayY; ?>&view=day&today=<?php echo $nextDayD; ?>">Next Day</a></div>
+			 	<div id="cal_prev_week"><a href="<?php echo site_url(); ?>/classes-calendar/?cur_month=<?php echo $prevDayM; ?>&amp;cur_year=<?php echo $prevDayY; ?>&amp;view=day&amp;today=<?php echo $prevDayD; ?>">Prev Day</a></div>
+			 	<div id="cal_next_week"><a href="<?php echo site_url(); ?>/classes-calendar/?cur_month=<?php echo $nextDayM; ?>&amp;cur_year=<?php echo $nextDayY; ?>&amp;view=day&amp;today=<?php echo $nextDayD; ?>">Next Day</a></div>
 			<?php }else{ ?>
-				<div id="cal_next_week"><a href="<?php echo site_url(); ?>/classes-calendar/?week=next&cur_week=<?php echo $next_week;?><?php if($new_yr){echo'&cur_year='.$new_yr;}?>">Next Week</a></div>
-	          <div id="cal_prev_week"><a href="<?php echo site_url(); ?>/classes-calendar/?week=prev&cur_week=<?php echo $last_week;?><?php if($last_yr){echo'&cur_year='.$last_yr;}?>">Prev Week</a></div>
+				<div id="cal_next_week"><a href="<?php echo site_url(); ?>/classes-calendar/?week=next&amp;cur_week=<?php echo $next_week;?><?php if($new_yr){echo'&cur_year='.$new_yr;}?>">Next Week</a></div>
+	          <div id="cal_prev_week"><a href="<?php echo site_url(); ?>/classes-calendar/?week=prev&amp;cur_week=<?php echo $last_week;?><?php if($last_yr){echo'&cur_year='.$last_yr;}?>">Prev Week</a></div>
 			<?php } ?>
         </div>
 

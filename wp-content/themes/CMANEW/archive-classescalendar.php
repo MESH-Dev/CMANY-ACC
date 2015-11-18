@@ -30,7 +30,7 @@
 
 
           <div class="cal_browseby">
-            <span class="left">Browse By:</span>
+            Browse By:            
             <ul>
               <li>Age
 	<?php

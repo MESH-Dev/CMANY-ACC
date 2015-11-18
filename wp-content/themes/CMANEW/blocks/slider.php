@@ -21,6 +21,11 @@ while(the_repeater_field('slide-image')): ?>
 	 
     
      <span class="slide-caption"><?php the_sub_field('the-caption'); ?></span>   
+     <div class="controls">
+     	<button id="play">Play</button>
+     	<button id="pause">Pause</button>
+     	<!-- <button id="stop">Pause</button> -->
+     </div>
  </div>
              	                           
 <?php endwhile; ?>

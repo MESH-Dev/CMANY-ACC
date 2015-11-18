@@ -41,7 +41,7 @@ get_header('nav'); ?>
 
 
         <!-- MAIN CONTENT -->
-   <?php the_content(); ?>
+   <?php //the_content(); ?>
 
 
 		<?php
@@ -139,7 +139,7 @@ get_header('nav'); ?>
         // );
 				$query = new WP_Query($args);
 				if($seasonName || $ageName || $locationName || $departmentName){
-					echo "<h3 id='filterBy'>Filtered by: <span>$seasonName</span> <span>$ageName</span> <span>$locationName</span> <span>$departmentName</span></h3>";
+					echo "<h3 class='yo' id='filterBy'>Filtered by: <span>$seasonName</span> <span>$ageName</span> <span>$locationName</span> <span>$departmentName</span></h3>";
 				}
 				if($date_for_monday){
 					echo "<h2 id='weekFilter'>Week of $date_for_monday</h2>";

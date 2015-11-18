@@ -17,14 +17,22 @@ function setEqualHeight(columns){
  //END FUNC
 }
 
+$(function() {
+    $("#header .menu li > ul").addClass('hider').hide();
+
+});
+
 //READY
 $(document).ready(function(){
 
+  $('.skiptocontent').click(function(){
+    $('#page-container').focus();
+  });
 
   $(".lightbox").colorbox({iframe:true,width:"80%", height:"80%" });
   $(".lightbox_content").colorbox({inline:true,width:"60%" });
 
-
+  $('.pane *').attr("tabindex","0");
 
   /////////////////////////////////////////TABS///////////////////////////////
 
@@ -45,6 +53,9 @@ $(document).ready(function(){
 
   $("ul.tabs").children('p').remove();
   $("ul.tabs").children('br').remove();
+
+  //Adds tabindex attribut to ANY alement created inside of a tab pane.
+  $('.pane *').attr("tabindex","0");
 
 
   /*
@@ -169,27 +180,27 @@ $(document).ready(function(){
   });
 
 
-
-
-
-
   /*
   ///////////////////////////////////////MAIN MENU////////////////////////////
   */
 
-    //HOVER
-    // $(".primary,.secondary").hover(
+    // //HOVER
+    // $(".primary").hover(
 
     //     //IN
     //     function(){
 
     //         //ANIMATE HEADER
-    //         $("#header").stop().animate({
-    //             'height':240
-    //         },300);
+    //         // $("#header").stop().animate({
+    //         //     'height':240
+    //         // },300);
+
+    //         $('header#header div.primary').animate({'height':544}, 300);
 
     //         //SUBMENU
-    //         $(".secondary").slideDown(300);
+    //         //$(".secondary").slideDown(300);
+
+    //         $("#header .menu li > ul").show();
 
     //         //LOGO
     //        $("#sidebar-new").stop().animate({'margin-top':'311px'},300);
@@ -212,6 +223,8 @@ $(document).ready(function(){
 
     //         //LOGO
     //        $("#sidebar-new").stop().animate({'margin-top': '120px'},300);
+
+    //        $("#header .menu li > ul").hide();
 
     //         //IF TOUCHSCREEN
     //         if ('ontouchstart' in document.documentElement) {
@@ -300,16 +313,36 @@ $(document).ready(function(){
 
     // $('.menu ul.sub-menu').css({'height':0});
 
-    $('ul.sub-menu').hide();
-    $('ul.menu a').hover(function(){
-      $('ul.sub-menu').show();
-      $("#sidebar-new").stop().animate({'margin-top':'644px'},300);
-    });
+    //var key = event.which;
 
-    $('ul.menu a').keypress(function(){
-      $('ul.sub-menu').show();
-      $("#sidebar-new").stop().animate({'margin-top':'120px'},300);
-    });
+    //$('ul.sub-menu').hide();
+
+    $('ul.menu > li a').keyup(function(event){
+      var key = event.which;
+      if (key === 9 || (key > 36 && key < 41)) {
+        //alert(key);
+        //$('ul.sub-menu').show();
+        $('header#header div.primary').animate({'height':317}, 300);
+        $("#sidebar-new").stop().animate({'margin-top':'644px'},300);
+        $('#header .menu li > ul').show();
+      }
+    })
+
+    $('.primary .close').click(function(){
+      $('ul.sub-menu').slideUp();
+    })
+    //if user has pressed tab, right, or left arrows
+    //if (code === 9 || (code > 36 && code < 41)) {
+
+    // $('ul.menu a').keypress(function(){
+    //   $('ul.sub-menu').show();
+    //   $("#sidebar-new").stop().animate({'margin-top':'644px'},300);
+    // });
+
+    // $('ul.menu a').keypress(function(){
+    //   $('ul.sub-menu').show();
+    //   $("#sidebar-new").stop().animate({'margin-top':'120px'},300);
+    // });
 
 
     $('#carousel').carouFredSel({
@@ -318,6 +351,7 @@ $(document).ready(function(){
           pause: true,
           play: false,
           auto: false,
+          responsive: true,
           items: {
             visible: 3,
             start: -1
@@ -336,8 +370,15 @@ $(document).ready(function(){
           }
         });
 
+        $('button#pause').click(function(){
+          $('#carousel').trigger("pause", true);
+        })
+        $('button#play').click(function(){
+          $('#carousel').trigger("play", true);
+        })
+
         $("#nextbut").click(function() {
-            $("#carousel").trigger("next", 1);
+            $("#carousel").trigger("next", 3);
         });
         $("#prevbut").click(function() {
             $("#carousel").trigger("prev", 1);
@@ -367,11 +408,12 @@ $( window ).load(function(){
             container: '#pager-slides',
             deviation: 1
           },
+          responsive: true,
           items: {
             visible: 1,
             start: -1
           },
-          auto:false,
+          auto:true,
           scroll: {
             items: 1,
             duration: 700,
@@ -385,7 +427,20 @@ $( window ).load(function(){
 
 });
 
+        $('button#pause').click(function(){
+          $('#newslider').trigger("stop",true);
+          console.log("#newslider paused");
+        })
+        $('button#play').click(function(){
+          $('#newslider').trigger("play", true);
+          console.log("#newslider playing");
+        })
+        // $('button#stop').click(function(){
+        //   $('#newslider').trigger("stop", true);
+        //   console.log("#newslider stopped");
+        // })
 
+$('#pager-slides a span').prepend('Slide ');
 
 
 $(document).ready(function(){
@@ -397,6 +452,7 @@ $(document).ready(function(){
 		$('#calendarMain').toggleClass('active').toggleClass('fade');
 		$('#calendarFeed').toggleClass('active');
 		$('.calendar_main_column').height('auto');
+    $('#calendarMain').focus();
 		$('#event-content').empty();
 	});
 
@@ -410,6 +466,8 @@ $(document).ready(function(){
 		$newurl = $url.substring(0, $url.length - 1);
 		$newurl = $url+' #event-content';
 		$('#event-content').load($newurl,function(){
+      $(this).attr('tabindex', '-1').focus();
+      //$('#event-content h2').focus();
 			$('#calendarMain').toggleClass('active');
 			$('#calendarFeed').toggleClass('active');
 			$('#loader').toggleClass('active');
@@ -490,7 +548,7 @@ $(document).ready(function(){
 		$NextPrev = $(this).attr('data-tofrom');
 		$.ajax({
 			type  	: "POST",
-			url		:  "http://cmany.org/wp-content/themes/CMANEW/js/widgetAJAX.php",
+			url		:  "http://localhost:8888/cmany/wp-content/themes/CMANEW/js/widgetAJAX.php",
 			data	: {curMonth: $curMonth, curYear: $curYear, reload:true, tofrom:$NextPrev}
 		})
 		.done(function(result) {

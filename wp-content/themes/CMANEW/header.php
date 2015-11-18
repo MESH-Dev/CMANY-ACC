@@ -108,8 +108,16 @@
 	?>
 
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> >
 
-<div class="skiptocontent">
+<?php if (is_page() && is_page_template()){ ?>
+<div class="skiptocontent" id="skip">
 	<a href="#page-container">Skip to main content</a>
 </div>
+<?php } else { ?>
+
+	<div class="skiptocontent">
+	<a href="#page-content">Skip to main content</a>
+</div>
+
+<?php } ?>

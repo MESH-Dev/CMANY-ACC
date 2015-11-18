@@ -7,7 +7,7 @@
 
               <div class="imgcol">
                 <a href="http://www.cmany.org/visit-us-2/">
-                  <img alt="Map of CMANY location" src="<?php bloginfo( 'template_url' )?>/images/map.png" />
+                  <img alt="Visit Us" src="<?php bloginfo( 'template_url' )?>/images/map.png" />
                 </a>
               </div>
               <div class="acol">
@@ -47,7 +47,7 @@
 
             <div class="footer-right">
               <h4>Follow Us!</h4>
-               <a target="_blank" href="http://on.fb.me/nqqBkf"><img alt="Follow us on Facebook" src="<?php bloginfo( template_url  )?>/images/facebookg.png" /></a>
+               <a target="_blank" href="http://on.fb.me/nqqBkf"><img alt="Follow us on Facebook" src="<?php bloginfo( 'template_url'  )?>/images/facebookg.png" /></a>
                <a target="_blank" href="http://twitter.com/#!/CMAinNYC"><img alt="Find us on Twitter" src="<?php bloginfo( 'template_url' )?>/images/twitterg.png" /></a>
                <a target="_blank" href="http://www.flickr.com/photos/cma_in_nyc/"><img alt="See our photo stream on flickr" src="<?php bloginfo( 'template_url' )?>/images/flickrg.png" /></a>
                <br><bR>

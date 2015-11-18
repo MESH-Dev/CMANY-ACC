@@ -39,7 +39,7 @@
 
 
         <!-- MAIN CONTENT -->
-<?php the_content(); ?>
+<div id="page-content"><?php the_content(); ?></div>
 
 <?php if(get_field('footer-text')): ?>
             <hr>
