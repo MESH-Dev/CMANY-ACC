@@ -15,7 +15,7 @@ get_header('nav');
 
 <!--PAGE-NEW-->
 <div id="page-new" class="container">
-
+	<?php get_sidebar('mainnew'); ?>
   <!--PAGE-CONTAINER -->
   <div id="page-container" class="homecols">
 

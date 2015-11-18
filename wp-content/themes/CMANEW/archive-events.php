@@ -1,15 +1,15 @@
 <?php error_reporting(0);
   get_header();
-  get_sidebar('mainnew');
+  //get_sidebar('mainnew');
   get_header('nav');
 
 ?>
 <!--PAGE-NEW-->
 <div id="page-new" class="container">
   <!--PAGE-CONTAINER -->
-
+  <?php get_sidebar('mainnew');?>
   <div class="new_page" id="page-container">
-    <div class="ten columns">
+    <div class="eight columns offset-by-one">
     <div class="block">
       <h2 class="page-title">Calendar</h2>
     </div>
@@ -143,7 +143,7 @@
   </div> <!-- end ten columns -->
 
     <!--EVENT SIDEBAR-->
-    <div class="two columns">
+    <div class="three columns">
     <div id="event_sidebar">
 
       <div id="event_mini_calendar">

@@ -25,6 +25,18 @@ $(function() {
 //READY
 $(document).ready(function(){
 
+  $('.sidr-trigger').sidr({
+    name:'sidr-menu',
+    renaming:false,
+    source: 'header#header #pcontainer'
+  })
+
+  $('.sidr-close').click(
+    function(){
+      $.sidr('close', 'sidr-main');
+      // console.log("Sidr should be closed");
+    });
+
   $('.skiptocontent').click(function(){
     $('#page-container').focus();
   });
@@ -343,7 +355,7 @@ $(document).ready(function(){
     //   $('ul.sub-menu').show();
     //   $("#sidebar-new").stop().animate({'margin-top':'120px'},300);
     // });
-
+  
 
     $('#carousel').carouFredSel({
           width: '100%',

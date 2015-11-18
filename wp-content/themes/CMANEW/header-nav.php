@@ -32,6 +32,7 @@
       <!--PRIMARY-->
 	    <div class="primary"  >
         <div id="pcontainer">
+          <div class="mobile-only sidr-close"><i class="fa fa-fw fa-close"></i></div>
 <?php
             $defaults = array(
               'menu'            => 'Main',

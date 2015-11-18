@@ -38,8 +38,10 @@
 
 	    <!--CSS-->
 	    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/css/reset.css" />
+	    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/css/jquery.sidr.light.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/style.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/js/colorbox.css" />
+		
 		<!--
 		<link rel="stylesheet" type="text/css" media="all" href="<?php //bloginfo( 'template_url' ); ?>/css/fonts.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php //bloginfo( 'template_url' ); ?>/css/color.css" media="all">
@@ -121,3 +123,5 @@
 </div>
 
 <?php } ?>
+
+<a class="sidr-trigger">Sidr</a>
