@@ -41,10 +41,83 @@ $(document).ready(function(){
     $('#page-container').focus();
   });
 
+  //$('#header ul.menu > li').wrap('<div class="two columns">');
+
   $(".lightbox").colorbox({iframe:true,width:"80%", height:"80%" });
   $(".lightbox_content").colorbox({inline:true,width:"60%" });
 
   $('.pane *').attr("tabindex","0");
+
+var bWidth = $('body').width();
+console.log(bWidth);
+
+if (window.matchMedia(('max-width: 767px')).matches){
+  $('*').removeClass('offset-by-one');
+}
+//:::://////////////////////// Resize video  ///////////////////////////////:::://
+//via https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php //
+
+  // Find all YouTube videos
+var wWidth = $(window).width();
+
+//if (wWidth <= 500){
+var $allVideos = $("iframe[src^='//www.youtube.com'], iframe[src^='//player.vimeo.com']"),
+
+    // The element that is fluid width
+    $fluidEl = $("#page-container");
+
+// Figure out and save aspect ratio for each video
+$allVideos.each(function() {
+
+  $(this)
+    .data('aspectRatio', this.height / this.width)
+
+    // and remove the hard coded width/height
+    .removeAttr('height')
+    .removeAttr('width');
+
+});
+
+// When the window is resized
+$(window).resize(function() {
+
+  var newWidth = $fluidEl.width();
+
+  // Resize all videos according to their own aspect ratio
+  $allVideos.each(function() {
+
+    var $el = $(this);
+    $el
+      //.width(newWidth)
+      .height(newWidth * $el.data('aspectRatio'));
+
+  });
+
+// Kick off one resize to fix all videos on page load
+}).resize();
+//}
+//:::: END :::://
+
+function miniCalendar(){
+  var tWidth = $('#event_mini_calendar, #class_mini_calendar').width();
+  var cellSize = (tWidth-2)/7;
+
+  $('#event_mini_calendar td a, #event_mini_calendar th, #class_mini_calendar td a, #class_mini_calendar th').css({width:cellSize, height:cellSize});
+}
+
+miniCalendar();
+$(window).resize(miniCalendar);
+
+function sidebarMargin(){
+
+  var sidebarWidth = $('#sidebar-new').width();
+  var margin = ((wWidth - 979.992)/2)-sidebarWidth;
+  
+  $('.home #sidebar-new').css({marginLeft:margin});
+}
+
+$(window).resize(sidebarMargin);
+sidebarMargin();
 
   /////////////////////////////////////////TABS///////////////////////////////
 
@@ -76,14 +149,14 @@ $(document).ready(function(){
 
   $(".overview-item").hover(
   function(){
-    $(this).find('.subtitle').stop().animate({
-       top:'-250px'
+    $(this).find('a').stop().animate({
+       top:'0'
     },400);
   // This only fires if the row is not undergoing an animation when you mouseover it
   },
   function() {
-    $(this).find('.subtitle').stop().animate({
-       top:'-60px'
+    $(this).find('a').stop().animate({
+       top:'87%'
     },400);
   });
 

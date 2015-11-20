@@ -32,15 +32,18 @@
 
 <!--META-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 
 
 
 	    <!--CSS-->
+	    <link rel="stylesheet" type="text/css" media="all" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
 	    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/css/reset.css" />
 	    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/css/jquery.sidr.light.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/style.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/js/colorbox.css" />
+		
 		
 		<!--
 		<link rel="stylesheet" type="text/css" media="all" href="<?php //bloginfo( 'template_url' ); ?>/css/fonts.css" />
@@ -56,7 +59,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/jquery-ui-1.10.3.custom.min.js"></script>
 		<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-9261915-1"]);_gaq.push(["_trackPageview"]);(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
-		<script type="text/javascript">var small="width=device-width, initial-scale=.33, maximum-scale=1";var large="width=device-width, initial-scale=.66, maximum-scale=1";var viewPort=document.createElement("meta");viewPort.id="viewport";viewPort.name="viewport";if(window.outerWidth<500){viewPort.content=small}else{viewPort.content=large}document.getElementsByTagName("HEAD")[0].appendChild(viewPort);</script>
+		<!--<script type="text/javascript">var small="width=device-width, initial-scale=.33, maximum-scale=1";var large="width=device-width, initial-scale=.66, maximum-scale=1";var viewPort=document.createElement("meta");viewPort.id="viewport";viewPort.name="viewport";if(window.outerWidth<500){viewPort.content=small}else{viewPort.content=large}document.getElementsByTagName("HEAD")[0].appendChild(viewPort);</script>-->
 
 
 <?php	wp_head();?>
@@ -69,22 +72,22 @@
 <meta name="google-site-verification" content="IgyERgUFS5ccnEs0twEQ7KVwhMw-o9xBEljrP-fpzYc" />
 
 <?php if (is_page(6587)) {//visit-us
-		echo '<script src="//load.sumome.com/" data-sumo-site-id="a3a17e98bc3f1ff9c80d3cbf4da82c609160ddd886bc82efb613d8f7e7c7b72b" async="async"></script>';
+		//echo '<script src="//load.sumome.com/" data-sumo-site-id="a3a17e98bc3f1ff9c80d3cbf4da82c609160ddd886bc82efb613d8f7e7c7b72b" async="async"></script>';
 	}
 	elseif (is_page('events')){ //events page
-		echo '<script src="//load.sumome.com/" data-sumo-site-id="53ade6799ea829919a8b56476eaf0eace77d111d67034146c02a6f5dc0cc0611" async="async"></script>';
+		//echo '<script src="//load.sumome.com/" data-sumo-site-id="53ade6799ea829919a8b56476eaf0eace77d111d67034146c02a6f5dc0cc0611" async="async"></script>';
 	}
 	elseif (is_page(40)){ //classes
-		echo '<script src="//load.sumome.com/" data-sumo-site-id="174c7b9b64f456d52433f3172257d56ab1258d80b60eddc9a08bb329bb371c9e" async="async"></script>';
+		//echo '<script src="//load.sumome.com/" data-sumo-site-id="174c7b9b64f456d52433f3172257d56ab1258d80b60eddc9a08bb329bb371c9e" async="async"></script>';
 	}
 	elseif (is_page(71)){ //schools-and-community
-		echo '<script src="//load.sumome.com/" data-sumo-site-id="66fd6780c5fabad9c84b8949762f4023bcfd67b2d90e4c305f771614d063dd48" async="async"></script>';
+		//echo '<script src="//load.sumome.com/" data-sumo-site-id="66fd6780c5fabad9c84b8949762f4023bcfd67b2d90e4c305f771614d063dd48" async="async"></script>';
 	}
 	elseif (is_page(472)){ //rentals
-		echo '<script src="//load.sumome.com/" data-sumo-site-id="7c1224c391b9919b3a8be99f31db4c2569ec8ef664536dda9e9c3f0f7c2de704" async="async"></script>';
+		//echo '<script src="//load.sumome.com/" data-sumo-site-id="7c1224c391b9919b3a8be99f31db4c2569ec8ef664536dda9e9c3f0f7c2de704" async="async"></script>';
 	}
 	elseif (is_front_page()){ //home
-		echo '<script src="//load.sumome.com/" data-sumo-site-id="796039e81af1fd6d9f69625f4904b3d2a74c34856b8d641782b35b0f165dc9d1" async="async"></script>';
+		//echo '<script src="//load.sumome.com/" data-sumo-site-id="796039e81af1fd6d9f69625f4904b3d2a74c34856b8d641782b35b0f165dc9d1" async="async"></script>';
 	}
 	
 
@@ -124,4 +127,6 @@
 
 <?php } ?>
 
-<a class="sidr-trigger">Sidr</a>
+<div class="sidr-container">
+	<a class="sidr-trigger" aria-label="Reveal navigation"><i class="fa fa-fw fa-2x fa-navicon"></i></a>
+</div>

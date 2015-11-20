@@ -3,16 +3,19 @@
     * Template Name: Listing Page
     */
   get_header();
-  get_sidebar('mainnew'); 
+  //get_sidebar('mainnew'); 
   get_header('nav'); 
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" >
+<div id="page-new" class="container">
   <!--PAGE-CONTAINER -->
   <div id="page-container" class="new_page">
+
+    <?php get_sidebar('mainnew'); ?>
+
 <?php while ( have_posts() ) : the_post(); ?>
-    
+    <div class="columns eleven offset-by-one">
      <!--TITLE -->
     <div class="block">
       <h2 class="page-title<?php echo $currentcolor; ?>">
@@ -38,7 +41,7 @@
    <?php 
         $ctr = 1;
         while(the_repeater_field('blocks')): ?>     
-        <div class="listing-item title-<?php echo $ctr; ?><?php the_sub_field('block-title');?>" href="<?php the_sub_field('block-link');?>">
+        
 		  <?php 
               //$attachment_id = get_sub_field('block-image');
               $block_image = get_sub_field('block-image');
@@ -46,8 +49,8 @@
               $block_imageAlt = $block_image['alt'];
               $size = "blockimage";  
               $image =  wp_get_attachment_image( $attachment_id, $size );   ?>
-            <img alt="<?php echo $block_imageAlt; ?>" src="<?php echo $block_imageUrl; ?>" /><!--<?php //the_sub_field('block-image')?>-->
-		           
+
+		  <div class="overview-item title-<?php echo $ctr; ?><?php the_sub_field('block-title');?>" style="background-image=url('<?php echo $block_imageUrl; ?>')">
 		      <div class="subtitle">
 		          <h3><?php the_sub_field('block-title');?></h3>
               <p class="learnmore">Learn More...</p>
@@ -86,7 +89,7 @@
 <?php endwhile; ?>
 
 
-    <div class="clear">&nbsp;</div>
+    <div class="clear" aria-hidden="true">&nbsp;</div>
     <!--CLEAR-->
     <!--END PAGE-CONTAINER -->
   </div>

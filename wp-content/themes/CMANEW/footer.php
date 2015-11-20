@@ -102,8 +102,7 @@
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/libs/carousel.js"></script>
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/pat-script.js" defer></script>
-<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/libs/jquery.sidr.min.js" ></script>
-
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/libs/jquery.sidr.min.js"></script>
 
 <!--CHROME FRAME -->
 <!--[if lt IE 7 ]>

@@ -3,14 +3,17 @@
     * Template Name: Landing Page
     */
   get_header();
-  get_sidebar('mainnew');
+  //get_sidebar('mainnew');
   get_header('nav');
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" >
+<div id="page-new" class="container">
+
+  <?php get_sidebar('mainnew'); ?>
   <!--PAGE-CONTAINER -->
   <div id="page-container" class="new_page">
+    <div class="eleven columns offset-by-one">
 <?php while ( have_posts() ) : the_post(); ?>
 
      <!--TITLE -->
@@ -38,8 +41,7 @@
    <?php while(the_repeater_field('blocks')): ?>
    <!--<?php //if (have_rows('blocks')) : 
           //while (have_rows('blocks') : the_row(); ?>-->
-        <div class="overview-item" href="<?php the_sub_field('block-link');?>">
-		  <?php
+           <?php
               //$attachment_id = get_sub_field('block-image');
               $blockimage = get_sub_field('block-image');
               $blockimageUrl = $blockimage['url'];
@@ -47,8 +49,10 @@
               //var_dump($blockimageUrl);
               $size = "blockimage";
               $image =  wp_get_attachment_image( $attachment_id, $size );   ?>
-            <img alt="<?php echo $blockimage['alt'] ?>" src="<?php echo $blockimage['url'] ?>" />
-
+        <div class="overview-item" href="<?php the_sub_field('block-link');?>" style="background-image:url('<?php echo $blockimage['url'] ?>'); background-repeat:no-repeat;">
+		 
+            <!-- <img alt="<?php //echo $blockimage['alt'] ?>" src="<?php echo $blockimage['url'] ?>" />
+ -->
 
 		      <a  href="<?php the_sub_field('block-link');?>" >
   		      <div aria-has-popup="true" class="subtitle" style="top: -60px">
@@ -69,7 +73,7 @@
 
     </div>
 
-
+</div>
 
 <?php endwhile; ?>
 
