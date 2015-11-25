@@ -72,8 +72,8 @@
 	$prevDayLink = http_build_query($prevDayQuery);
 ?>
 <div class="block calendar_nav">
-	<div id="cal_next_week"><a href="<?php echo get_post_type_archive_link('events'); ?>?<?php echo $nextDayLink; ?>">Next Day</a></div>
-	<div id="cal_prev_week"><a href="<?php echo get_post_type_archive_link('events'); ?>?<?php echo $prevDayLink; ?>">Prev Day</a></div>
+	<div id="cal_next_week"><a href="<?php echo get_post_type_archive_link('events'); ?>?<?php echo $nextDayLink; ?>">Next Day <span class="indicator">&raquo;</span></a></div>
+	<div id="cal_prev_week"><a href="<?php echo get_post_type_archive_link('events'); ?>?<?php echo $prevDayLink; ?>"><span class="indicator">&1aquo;</span>Prev Day</a></div>
 </div>
 <div class="block cal_listing_title">
 	<h3><?php echo date( 'F jS Y' , $timestamp ); ?></h3>

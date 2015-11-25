@@ -10,7 +10,7 @@
 ?>
 <div id="page-new" >
 <div id="sidebar-new">
-    			<a href="<?php echo site_url(); ?>">	<img alt="Return to CMANY home" src="<?php bloginfo( 'template_url' ) ?>/images/cma-logo.jpg" /> </a>
+    			<a class="home" href="<?php echo site_url(); ?>">	<img alt="Return to CMANY home" src="<?php bloginfo( 'template_url' ) ?>/images/cma-logo.jpg" /> </a>
 
 
 

@@ -13,7 +13,7 @@
   <?php get_sidebar('mainnew'); ?>
   <!--PAGE-CONTAINER -->
   <div id="page-container" class="new_page">
-    <div class="eleven columns offset-by-one">
+    <div class="eleven columns">
 <?php while ( have_posts() ) : the_post(); ?>
 
      <!--TITLE -->
@@ -55,7 +55,8 @@
  -->
 
 		      <a  href="<?php the_sub_field('block-link');?>" >
-  		      <div aria-has-popup="true" class="subtitle" style="top: -60px">
+  		      <div aria-has-popup="true" class="subtitle" ><!-- style="top: -60px" -->
+              <div class="subtitle-content">
 
   		          <h3><?php the_sub_field('block-title');?></h3>
   		     <?php the_sub_field('block-description');?>
@@ -64,6 +65,7 @@
   		          <p class="read-more">LEARN MORE >></p><!-- href="<?php //the_sub_field('block-link');?>" -->
                 <!-- <div class="close">Close</div> -->
            <?php } ?>
+              </div>
   		      </div>
           </a>
     	 	</div>

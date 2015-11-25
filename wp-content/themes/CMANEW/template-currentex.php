@@ -61,7 +61,7 @@
 <?php endwhile; ?>
 
 
-    <div class="clear">&nbsp;</div>
+    <div class="clear" aria-hidden="true">&nbsp;</div>
     <!--CLEAR-->
     <!--END PAGE-CONTAINER -->
   </div>

@@ -9,7 +9,7 @@
   <!--PAGE-CONTAINER -->
   <?php get_sidebar('mainnew');?>
   <div id="page-container" class="new_page">
-    <div class="eight columns offset-by-one">
+    <div class="eight columns">
         <?php while ( have_posts() ) : the_post(); ?>
 
      <!--TITLE -->

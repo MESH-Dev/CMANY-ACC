@@ -33,8 +33,8 @@ $(document).ready(function(){
 
   $('.sidr-close').click(
     function(){
-      $.sidr('close', 'sidr-main');
-      // console.log("Sidr should be closed");
+      $.sidr('close', 'sidr-menu');
+       console.log("Sidr should be closed");
     });
 
   $('.skiptocontent').click(function(){
@@ -51,9 +51,9 @@ $(document).ready(function(){
 var bWidth = $('body').width();
 console.log(bWidth);
 
-if (window.matchMedia(('max-width: 767px')).matches){
-  $('*').removeClass('offset-by-one');
-}
+// if ($window.matchMedia(('max-width: 767px')).matches){
+//   $('*').removeClass('offset-by-one');
+// }
 //:::://////////////////////// Resize video  ///////////////////////////////:::://
 //via https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php //
 
@@ -98,26 +98,39 @@ $(window).resize(function() {
 //}
 //:::: END :::://
 
+//::::::::::::::  Mini Calendar Size ::::::::::::::::://
+
 function miniCalendar(){
   var tWidth = $('#event_mini_calendar, #class_mini_calendar').width();
   var cellSize = (tWidth-2)/7;
 
-  $('#event_mini_calendar td a, #event_mini_calendar th, #class_mini_calendar td a, #class_mini_calendar th').css({width:cellSize, height:cellSize});
+  $('#event_mini_calendar td a, #event_mini_calendar td, #event_mini_calendar th, #class_mini_calendar td a, #class_mini_calendar td, #class_mini_calendar th')
+      .css({width:cellSize, height:cellSize});
 }
 
 miniCalendar();
 $(window).resize(miniCalendar);
 
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::://
+
+//::::::::::::::  Sidebar location ::::::::::::::::::://
 function sidebarMargin(){
 
+  var windowW = $(window).width();
   var sidebarWidth = $('#sidebar-new').width();
-  var margin = ((wWidth - 979.992)/2)-sidebarWidth;
+  var margin = ((windowW - 979.992)/2)-sidebarWidth;
   
   $('.home #sidebar-new').css({marginLeft:margin});
+
+  //console.log(sidebarWidth);
+  //console.log(margin);
+  //console.log(wWidth);
 }
 
 $(window).resize(sidebarMargin);
 sidebarMargin();
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::://
 
   /////////////////////////////////////////TABS///////////////////////////////
 
@@ -156,7 +169,7 @@ sidebarMargin();
   },
   function() {
     $(this).find('a').stop().animate({
-       top:'87%'
+       top:'83%'
     },400);
   });
 
@@ -268,59 +281,67 @@ sidebarMargin();
   /*
   ///////////////////////////////////////MAIN MENU////////////////////////////
   */
+  if ($(window).width() > 767){
+    //HOVER
+    $("ul.menu").hover(
 
-    // //HOVER
-    // $(".primary").hover(
+        //IN
+        function(){
 
-    //     //IN
-    //     function(){
+            //ANIMATE HEADER
+            // $("#header").stop().animate({
+            //     'height':240
+            // },300);
 
-    //         //ANIMATE HEADER
-    //         // $("#header").stop().animate({
-    //         //     'height':240
-    //         // },300);
+            $('header#header div.primary').css({'overflow':'visible'}).animate({'height':344}, 300);
+            
+            setTimeout(function(){$('#header ul.sub-menu').show();}, 250);
+            $('.close').removeClass('hide');
+            //SUBMENU
+            //$(".secondary").slideDown(300);
 
-    //         $('header#header div.primary').animate({'height':544}, 300);
+            //$("#header .menu li > ul").show();
 
-    //         //SUBMENU
-    //         //$(".secondary").slideDown(300);
+            //LOGO
+           $(".home #sidebar-new").stop().animate({'margin-top':'449px'},300);
 
-    //         $("#header .menu li > ul").show();
+            //IF TOUCHSCREEN
+            if ('ontouchstart' in document.documentElement) {
+              $("#closeMenu").fadeIn(500);
+            }
 
-    //         //LOGO
-    //        $("#sidebar-new").stop().animate({'margin-top':'311px'},300);
+        //END IN
+        });
 
-    //         //IF TOUCHSCREEN
-    //         if ('ontouchstart' in document.documentElement) {
-    //           $("#closeMenu").fadeIn(500);
-    //         }
+        $('.close a').click(function(){
+          $('header#header div.primary').animate({'height':0}, 300);
+          $('#header ul.sub-menu').hide();
+          $('.close').addClass('hide');
+          $('.home #sidebar-new').animate({'margin-top':'105px'},300);
+        });
+        //OUT
+        // function(){
 
-    //     //END IN
-    //     },
+        //      //ANIMATE HEADER
+        //     $("#header").stop().animate({
+        //         'height': 48
+        //     }, 300);
 
-    //     //OUT
-    //     function(){
+        //     //LOGO
+        //    $("#sidebar-new").stop().animate({'margin-top': '120px'},300);
 
-    //          //ANIMATE HEADER
-    //         $("#header").stop().animate({
-    //             'height': 48
-    //         }, 300);
+        //    $("#header .menu li > ul").hide();
 
-    //         //LOGO
-    //        $("#sidebar-new").stop().animate({'margin-top': '120px'},300);
+        //     //IF TOUCHSCREEN
+        //     if ('ontouchstart' in document.documentElement) {
+        //       $("#closeMenu").fadeOut(100);
+        //     }
 
-    //        $("#header .menu li > ul").hide();
+        // //END OUT
+        // }
 
-    //         //IF TOUCHSCREEN
-    //         if ('ontouchstart' in document.documentElement) {
-    //           $("#closeMenu").fadeOut(100);
-    //         }
-
-    //     //END OUT
-    //     }
-
-    // //END HOVER
-    // );
+    //END HOVER
+  
 
     //  //FOCUS
     // $(".menu li a").keyup(
@@ -370,7 +391,7 @@ sidebarMargin();
 
     // //END FOCUS
     // );
-
+}
     //CLICK CLOSE BUTTON
     $("#closeMenu").click(function(){
 
@@ -390,45 +411,101 @@ sidebarMargin();
     //END CLICK
     });
 
-
-    /*
-    //////////////////////////////////////CAROUSEL///////////////////////////////
-    */
-
-
-    // $('.menu ul.sub-menu').css({'height':0});
-
-    //var key = event.which;
-
-    //$('ul.sub-menu').hide();
-
-    $('ul.menu > li a').keyup(function(event){
+    $('ul.menu').keyup(function(event){
       var key = event.which;
       if (key === 9 || (key > 36 && key < 41)) {
         //alert(key);
         //$('ul.sub-menu').show();
-        $('header#header div.primary').animate({'height':317}, 300);
-        $("#sidebar-new").stop().animate({'margin-top':'644px'},300);
-        $('#header .menu li > ul').show();
+        $('header#header div.primary').css({'overflow':'visible'}).animate({'height':344}, 300);
+        setTimeout(function(){$('ul.sub-menu').delay(10000).show();}, 250);       
+        //$('header#header div.primary').css({'height':317});
+        $(".home #sidebar-new").stop().animate({'margin-top':'449px'},300);
+        //$('#header .menu li > ul').show();
       }
-    })
+    });
 
-    $('.primary .close').click(function(){
-      $('ul.sub-menu').slideUp();
-    })
-    //if user has pressed tab, right, or left arrows
-    //if (code === 9 || (code > 36 && code < 41)) {
+//Add open button to sidr nav links
+$('.sidr ul.menu > li').append('<div class="open"><i class="fa fa-fw fa-plus"></i></div>');
 
-    // $('ul.menu a').keypress(function(){
-    //   $('ul.sub-menu').show();
-    //   $("#sidebar-new").stop().animate({'margin-top':'644px'},300);
-    // });
 
-    // $('ul.menu a').keypress(function(){
-    //   $('ul.sub-menu').show();
-    //   $("#sidebar-new").stop().animate({'margin-top':'120px'},300);
-    // });
-  
+//Funcionality for open/close on sidr nav links
+$('.sidr .open').toggle(function(){
+  //Set every .sub-menu back to initial state on click
+  $('ul.sub-menu')
+    .slideUp()
+    .removeClass('sidr-active');
+  //Remove any .fa-minus classes and return to initial fa-plus class on each click
+  $('.open i')
+    .removeClass('fa-minus')
+    .addClass('fa-plus');
+  //On click find the nearest ul.sub-menu and open it
+  $(this)
+    .closest('li')
+    .find('ul.sub-menu')
+    .addClass('sidr-active')
+    .slideDown();
+  //On click find the .open button and change the symbol from closed to open
+  $(this)
+    .find('i')
+    .removeClass('fa-plus')
+    .addClass('fa-minus');
+},
+function(){
+  //Close the .sub-menu
+  $(this)
+    .closest('li')
+    .find('ul.sub-menu')
+    .removeClass('sidr-active')
+    .slideUp();;
+  $(this).find('i')
+    .removeClass('fa-minus')
+    .addClass('fa-plus');
+
+});
+
+//Create sidebar functionality @ less than 767px
+if ($(window).width() <= 767){
+$('#sidebar-new #subMenu')
+  .prepend('<li class="related"><span>Related <div class="open_sub"><i class="fa fa-fw fa-chevron-down"></i></span></li>') //<ul class="sub-menu-wrapper">
+$('#sidebar-new #subMenu ul').addClass('sidebar-sub hide');
+  //.prepend('<li>Related <div class="open_sub"><i class="fa fa-fw fa-plus"></li></li>');
+
+$('li.related').toggle(function(){
+  $('#sidebar-new #subMenu')
+    .find('ul.sidebar-sub')
+    .slideDown();
+  $('.open_sub i')
+    .removeClass('fa-chevron-down')
+    .addClass('fa-chevron-up');},
+    function(){
+    $('#sidebar-new #subMenu')
+      .find('ul.sidebar-sub')
+      .slideUp();
+    $('.open_sub i')
+    .removeClass('fa-chevron-up')
+    .addClass('fa-chevron-down');
+    
+});
+}
+
+if ($(window).width() <= 500){
+  $('.cal_browseby').click(function(){
+    ('.cal_browseby ul li ul').css({left:0});
+  });
+}
+    /*
+    //////////////////////////////////////CAROUSEL///////////////////////////////
+    */
+
+    var slider_label = function(){$('.slide').addClass('shown');};
+
+    var $highlight = function() { 
+    var $this = $("#carousel");
+
+    var items = $this.triggerHandler("currentVisible");     //get all visible items
+    $this.children().removeClass("active");                 // remove all .active classes
+    items.filter(":eq(1)").addClass("active");              // add .active class to n-th item
+};
 
     $('#carousel').carouFredSel({
           width: '100%',
@@ -436,7 +513,7 @@ sidebarMargin();
           pause: true,
           play: false,
           auto: false,
-          responsive: true,
+          //responsive: true,
           items: {
             visible: 3,
             start: -1
@@ -445,10 +522,12 @@ sidebarMargin();
             items: 1,
             duration: 1000,
             timeoutDuration: 7000,
-            pauseOnHover: true
+            pauseOnHover: true,
+            onAfter: $highlight
           },
           prev: '#prev',
           next: '#next',
+          
           pagination: {
             container: '#pager',
             deviation: 1
@@ -463,7 +542,7 @@ sidebarMargin();
         })
 
         $("#nextbut").click(function() {
-            $("#carousel").trigger("next", 3);
+            $("#carousel").trigger("next", 1);
         });
         $("#prevbut").click(function() {
             $("#carousel").trigger("prev", 1);

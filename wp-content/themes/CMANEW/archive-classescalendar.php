@@ -80,8 +80,8 @@
         </div>
 
         <div class="block calendar_nav">
-          <div id="cal_next_week"><a href="<?php echo site_url(); ?>/events/?week=next&amp;cur_week=<?php echo $next_week;?><?php if($new_yr){echo'&cur_year='.$new_yr;}?>">Next Week</a></div>
-          <div id="cal_prev_week"><a href="<?php echo site_url(); ?>/events/?week=prev&amp;cur_week=<?php echo $last_week;?><?php if($last_yr){echo'&cur_year='.$last_yr;}?>">Prev Week</a></div>
+          <div id="cal_next_week"><a href="<?php echo site_url(); ?>/events/?week=next&amp;cur_week=<?php echo $next_week;?><?php if($new_yr){echo'&cur_year='.$new_yr;}?>">Next Week <span class="indicator">&raquo;</span></a></div>
+          <div id="cal_prev_week"><a href="<?php echo site_url(); ?>/events/?week=prev&amp;cur_week=<?php echo $last_week;?><?php if($last_yr){echo'&cur_year='.$last_yr;}?>"><span class="indicator">&laquo;</span> Prev Week</a></div>
         </div>
 
 

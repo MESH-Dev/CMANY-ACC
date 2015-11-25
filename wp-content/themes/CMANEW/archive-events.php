@@ -9,7 +9,7 @@
   <!--PAGE-CONTAINER -->
   <?php get_sidebar('mainnew');?>
   <div class="new_page" id="page-container">
-    <div class="eight columns offset-by-one">
+    <div class="eight columns">
     <div class="block">
       <h2 class="page-title">Calendar</h2>
     </div>

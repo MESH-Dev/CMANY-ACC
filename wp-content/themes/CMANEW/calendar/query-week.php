@@ -105,8 +105,8 @@
 	$lastWeekLink = http_build_query($lastWeekQuery);
 ?>
 <div class="block calendar_nav">
-	<div id="cal_next_week"><a href="<?php echo get_post_type_archive_link('events'); ?>?<?php echo $nextWeekLink; ?>">Next Week</a></div>
-	<div id="cal_prev_week"><a href="<?php echo get_post_type_archive_link('events'); ?>?<?php echo $lastWeekLink; ?>">Prev Week</a></div>
+	<div id="cal_next_week"><a href="<?php echo get_post_type_archive_link('events'); ?>?<?php echo $nextWeekLink; ?>">Next Week <span class="indicator">&raquo;</span></a></div>
+	<div id="cal_prev_week"><a href="<?php echo get_post_type_archive_link('events'); ?>?<?php echo $lastWeekLink; ?>"><span class="indicator">&laquo;</span> Prev Week</a></div>
 </div>
 <div class="block cal_listing_title">
 	<h3>Week of <?php echo date( 'F jS' , $first_day_of_week ); ?></h3>

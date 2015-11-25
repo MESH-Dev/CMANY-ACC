@@ -15,7 +15,7 @@
     <?php get_sidebar('mainnew'); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-    <div class="columns eleven offset-by-one">
+    <div class="columns eleven">
      <!--TITLE -->
     <div class="block">
       <h2 class="page-title<?php echo $currentcolor; ?>">
@@ -51,11 +51,14 @@
               $image =  wp_get_attachment_image( $attachment_id, $size );   ?>
 
 		  <div class="overview-item title-<?php echo $ctr; ?><?php the_sub_field('block-title');?>" style="background-image=url('<?php echo $block_imageUrl; ?>')">
-		      <div class="subtitle">
+		     
+          <div class="subtitle">
+            <div class="subtitle-content"
 		          <h3><?php the_sub_field('block-title');?></h3>
               <p class="learnmore">Learn More...</p>
 		          <p class="content"><?php the_sub_field('block-description');?></p>
 		     <?php if(get_sub_field('block-link')){ ?> <a class="read-more" href="<?php the_sub_field('block-link');?>" >READ MORE >></a><?php }?>
+            </div>
 		      </div>  
     	 	</div>
    <?php  if($ctr %3 == 0) { ?>
