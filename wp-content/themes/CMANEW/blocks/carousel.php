@@ -31,13 +31,14 @@
       </div>
 
       <!--CAROUSEL NAV-->
-      <a href="#" id="prev" aria-label="Show previous slide"><!-- <span class="sr-only">Show previous slide</span> --></a>
-      <a href="#" id="next" aria-label="Show next slide"><!-- <span class="sr-only">Show next slide</span> --></a>
+      <div class="container caroufredsel-controls">
+        <a href="#" id="prev" aria-label="Show previous slide"><!-- <span class="sr-only">Show previous slide</span> --></a>
+        <a href="#" id="next" aria-label="Show next slide"><!-- <span class="sr-only">Show next slide</span> --></a>
 
-      <div id="pager"></div>
+        <div id="pager"></div>
 
-      <a href="#" id="prevbut" aria-label="Show previous slide"><!-- <span class="sr-only">Show Previous slide. What</span> --></a>
-      <a href="#" id="nextbut" aria-label="Show next slide"><!-- <span class="sr-only">Show Next slide. What </span> --></a>
-
+        <a href="#" id="prevbut" aria-label="Show previous slide"><!-- <span class="sr-only">Show Previous slide. What</span> --></a>
+        <a href="#" id="nextbut" aria-label="Show next slide"><!-- <span class="sr-only">Show Next slide. What </span> --></a>
+      </div>
   <!--END WRAPPER-->
   </div>

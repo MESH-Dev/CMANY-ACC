@@ -58,6 +58,7 @@
 		</script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<!--<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>-->
 		<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-9261915-1"]);_gaq.push(["_trackPageview"]);(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
 		<!--<script type="text/javascript">var small="width=device-width, initial-scale=.33, maximum-scale=1";var large="width=device-width, initial-scale=.66, maximum-scale=1";var viewPort=document.createElement("meta");viewPort.id="viewport";viewPort.name="viewport";if(window.outerWidth<500){viewPort.content=small}else{viewPort.content=large}document.getElementsByTagName("HEAD")[0].appendChild(viewPort);</script>-->
 

@@ -25,6 +25,8 @@ $(function() {
 //READY
 $(document).ready(function(){
 
+  $('span[class*="vimeo"], span[class*="youtube"]').css({height:"auto", width:"100%"});
+
   $('.sidr-trigger').sidr({
     name:'sidr-menu',
     renaming:false,
@@ -51,9 +53,12 @@ $(document).ready(function(){
 var bWidth = $('body').width();
 console.log(bWidth);
 
-// if ($window.matchMedia(('max-width: 767px')).matches){
-//   $('*').removeClass('offset-by-one');
-// }
+//Menu helper
+//$(window).resize(function(){
+if ($(window).width() >= 768 ){
+//$('#menu-main > li').wrap('<div class="two columns">');
+}
+//});
 //:::://////////////////////// Resize video  ///////////////////////////////:::://
 //via https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php //
 
@@ -64,7 +69,7 @@ var wWidth = $(window).width();
 var $allVideos = $("iframe[src^='//www.youtube.com'], iframe[src^='//player.vimeo.com']"),
 
     // The element that is fluid width
-    $fluidEl = $("#page-container");
+    $fluidEl = $("#page-content");
 
 // Figure out and save aspect ratio for each video
 $allVideos.each(function() {
@@ -88,7 +93,7 @@ $(window).resize(function() {
 
     var $el = $(this);
     $el
-      //.width(newWidth)
+      .width("100%")
       .height(newWidth * $el.data('aspectRatio'));
 
   });
@@ -294,6 +299,7 @@ sidebarMargin();
             // },300);
 
             $('header#header div.primary').css({'overflow':'visible'}).animate({'height':344}, 300);
+            //$('#menu-main > li div').removeClass('hide').addClass("columns");
             
             setTimeout(function(){$('#header ul.sub-menu').show();}, 250);
             $('.close').removeClass('hide');
@@ -316,6 +322,7 @@ sidebarMargin();
         $('.close a').click(function(){
           $('header#header div.primary').animate({'height':0}, 300);
           $('#header ul.sub-menu').hide();
+          //$('#menu-main > li div').addClass('hide').removeClass('columns');
           $('.close').addClass('hide');
           $('.home #sidebar-new').animate({'margin-top':'105px'},300);
         });
@@ -469,7 +476,7 @@ $('#sidebar-new #subMenu')
   .prepend('<li class="related"><span>Related <div class="open_sub"><i class="fa fa-fw fa-chevron-down"></i></span></li>') //<ul class="sub-menu-wrapper">
 $('#sidebar-new #subMenu ul').addClass('sidebar-sub hide');
   //.prepend('<li>Related <div class="open_sub"><i class="fa fa-fw fa-plus"></li></li>');
-
+//$('#menu-main > li').unwrap('<div>');
 $('li.related').toggle(function(){
   $('#sidebar-new #subMenu')
     .find('ul.sidebar-sub')
@@ -506,7 +513,10 @@ if ($(window).width() <= 500){
     $this.children().removeClass("active");                 // remove all .active classes
     items.filter(":eq(1)").addClass("active");              // add .active class to n-th item
 };
-
+    var $position = function(){
+      var cLeft = $('#carousel').left();
+      $('#carousel').css({left:cLeft - 50});
+    }
     $('#carousel').carouFredSel({
           width: '100%',
           align:'center',
@@ -523,7 +533,7 @@ if ($(window).width() <= 500){
             duration: 1000,
             timeoutDuration: 7000,
             pauseOnHover: true,
-            onAfter: $highlight
+            onAfter: $highlight, $position
           },
           prev: '#prev',
           next: '#next',

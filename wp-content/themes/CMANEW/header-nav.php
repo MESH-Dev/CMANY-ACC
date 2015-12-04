@@ -49,11 +49,12 @@
             );
             wp_nav_menu($defaults);
           ?>
-
-          <div tabindex="0" class="close hide"><a href="#">[ Close ]</a></div>
-        </div>
-        </div>
-      </div>
+          <!-- <div tabindex="0" class="close hide"><a href="#">[ Close ]</a></div> -->
+          
+        </div><!-- end .container -->
+        </div><!-- end #pcontainer -->
+        <div class="container"><div tabindex="0" class="close hide"><a href="">Close <i class="fa fa-fw fa-close"></i></a></div></div>
+      </div><!-- end .primary -->
 
 
 

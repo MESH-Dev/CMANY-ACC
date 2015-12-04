@@ -216,6 +216,11 @@ function my_wp_nav_menu_args( $args = '' )
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 
+//Read more excerpt at the end of posts on archive
+function new_excerpt_more( $more ) {
+  return ' <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( '...Continue reading', 'your-text-domain' ) . '</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
 //add_action( 'init', 'create_post_type' );
 
 /*
