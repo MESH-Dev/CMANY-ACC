@@ -41,7 +41,7 @@
         <div class="block calendar_filter">
 
           <div class="cal_viewby">
-            View By:
+            <span>View By:</span>
 <?php
 	        	//include filters with view change
 	        	parse_str($parseURL['query'], $vars);
@@ -135,9 +135,9 @@
 
     	</div>
     	<div id="calendarFeed">
-    		<button class="feedBack">Go back</button>
+    		<button class="feedBack"><span aria-hidden="true">&ltrif; </span>Go back</button>
     		<div id="event-content"></div>
-    		<button class="feedBack">Go back</button>
+    		<button class="feedBack"><span aria-hidden="true">&ltrif; </span>Go back</button>
     	</div>
     </div><!--END cal main columns-->
   </div> <!-- end ten columns -->

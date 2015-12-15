@@ -22,7 +22,7 @@ $col4_donate = get_field('col4_donate');
 <?php } ?>
 		<h2 class="<?php echo $row['color']; ?>"><!--<a href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">--><?php echo $row['title']; ?><!--</a>--></h2>
     <p><?php echo $row['content']; ?></p>
-    <p class="more" aria-hidden="true" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More ></p>
+    <p class="more" aria-hidden="true" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More &rsaquo;&rsaquo;</p>
   </div>
 </a>
 <?php } ?>
@@ -36,8 +36,8 @@ $col4_donate = get_field('col4_donate');
 
 <!--CALENDAR-->
 <div class="block-home">
-  <h2 class="">Featured Workshops</h2>
-<?php get_template_part( 'blocks/blocks/home', 'newercalendar' ); ?>
+  <!-- <h2 class="">Featured Workshops</h2> -->
+<?php get_template_part( 'blocks/home', 'newercalendar' ); ?>
 </div>
 
 <?php foreach($col2 as $row){ ?>
@@ -50,7 +50,7 @@ $col4_donate = get_field('col4_donate');
 <?php } ?>
 		<h2 class="<?php echo $row['color']; ?>"><!-- <a href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">--><?php echo $row['title']; ?><!--</a> --></h2>
     <p><?php echo $row['content']; ?></p>
-    <p class="more" aria-hidden="true" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More ></p>
+    <p class="more" aria-hidden="true" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More &rsaquo;&rsaquo;</p>
   </div>
 </a>
 <?php } ?>
@@ -73,7 +73,7 @@ $col4_donate = get_field('col4_donate');
 <?php } ?>
 
       <p><?php echo $row['content']; ?></p>
-     <p class="more" aria-hidden="true" href="<?php if($row['link'] !== ""){ echo $row['link']; } else { echo "http://blog.cmany.org";}?>">Read More ></p>
+     <p class="more" aria-hidden="true" href="<?php if($row['link'] !== ""){ echo $row['link']; } else { echo "http://blog.cmany.org";}?>">Read More &rsaquo;&rsaquo;</p>
   </div>
 <?php } ?>
 
@@ -87,7 +87,7 @@ $col4_donate = get_field('col4_donate');
 <?php } ?>
       <h2 class="<?php echo $row['color']; ?>"><!--<a href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">--><?php echo $row['title']; ?><!--</a>--></h2>
       <p><?php echo $row['content']; ?></p>
-      <p class="more" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More ></p>
+      <p class="more" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More &rsaquo;&rsaquo;</p>
     </div>
   </a>
 <?php } ?>
@@ -110,7 +110,7 @@ $col4_donate = get_field('col4_donate');
 
 <?php if(($row['link_override'] == "") && ($row['link'] == "")) { }
           else{?>
-          <p class="more" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More ></p>
+          <p class="more" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More &rsaquo;&rsaquo;</p>
 <?php } ?>
         </div>
 <?php } ?>
@@ -154,7 +154,7 @@ $col4_donate = get_field('col4_donate');
               <!--</a>-->
           </h2>
           <p><?php echo $row['content']; ?></p>
-          <p class="more" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More ></p>
+          <p class="more" href="<?php if($row['link_override'] !== ""){ echo $row['link_override']; } else { echo $row['link'];}?>">Read More &rsaquo;&rsaquo;</p>
         </div>
       </a>
 <?php } ?>

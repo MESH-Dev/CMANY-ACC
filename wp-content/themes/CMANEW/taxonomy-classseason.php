@@ -114,9 +114,9 @@
 
     	</div>
     	<div id="calendarFeed">
-    		<button class="feedBack">Go back</button>
+    		<button class="feedBack"><span aria-hidden="true">&ltrif; </span>Go back</button>
     		<div id="event-content"></div>
-    		<button class="feedBack">Go back</button>
+    		<button class="feedBack"><span aria-hidden="true">&ltrif; </span>Go back</button>
     	</div>
     </div><!--END cal main columns-->
 

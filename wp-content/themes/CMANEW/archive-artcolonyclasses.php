@@ -29,7 +29,7 @@
     	<div id="calendarMain">
         <div class="block calendar_filter">
           <div class="cal_viewby">
-            View By:
+            <span>View By:</span>
             <a <?php
             		if(isset($_GET['view'])){
             			if($_GET['view'] == 'day'){
@@ -130,9 +130,9 @@
 
     </div><!--END cal main columns-->
 	<div id="calendarFeed">
-    		<button class="feedBack">Go back</button>
+    		<button class="feedBack"><span aria-hidden="true">&ltrif; </span>Go back</button>
     		<div id="event-content"></div>
-    		<button class="feedBack">Go back</button>
+    		<button class="feedBack"><span aria-hidden="true">&ltrif; </span>Go back</button>
     	</div>
     </div>
     <!--EVENT SIDEBAR-->
@@ -146,7 +146,7 @@
 
     </div>
 
-    <div class="clear">&nbsp;</div>
+    <div class="clear" aria-hidden="true">&nbsp;</div>
     <!--CLEAR-->
 
 

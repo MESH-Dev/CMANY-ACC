@@ -3,13 +3,16 @@
 	Template Name: ACCget
 */
 get_header();
-get_sidebar('mainnew');
+//get_sidebar('mainnew');
 get_header('nav'); ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" class="accget" >
+<div id="page-new" class="container accget" >
   <!--PAGE-CONTAINER -->
+
+  <?php get_sidebar('mainnew') ?>
   <div id="page-container" class="new_page">
+  	<div class="eight columns"
 <?php while ( have_posts() ) : the_post(); ?>
 
      <!--TITLE -->
@@ -123,7 +126,7 @@ get_header('nav'); ?>
 				wp_reset_query();
 				$args = array(
 					'post_type' => 'artcolonyclasses',
-					'category_name' => 'art-colony',
+					'category_name' => 'art-colony-camp',
           'post_status'=>'publish',
 					'posts_per_page' => -1,
 					'tax_query' => $taxArr,
@@ -238,18 +241,18 @@ get_header('nav'); ?>
 
 
 
-      </div>
-
+      </div></div></div>
+      <div class="three columns"
       <!-- Sidebar CONTENT -->
       <sidebar id="cma-sidebar" class="mt-10">
    <?php get_template_part( 'blocks/classes', 'filterget' ); ?>
       </sidebar>
-
+  </div>
     </div>
 <?php endwhile; ?>
 
 
-    <div class="clear">&nbsp;</div>
+    <div class="clear" aria-hidden="true">&nbsp;</div>
     <!--CLEAR-->
     <!--END PAGE-CONTAINER -->
   </div>

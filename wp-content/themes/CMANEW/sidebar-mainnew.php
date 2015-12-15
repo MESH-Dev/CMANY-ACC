@@ -54,7 +54,11 @@
               'post_status' => 'publish'
             ));
 
-				  } else {
+				  }elseif (is_home() || is_category() || is_tag() || is_singular()){
+            
+                wp_list_categories_for_post_type('post','&order=ASC&title_li=');
+
+          } else {
 
             $children = wp_list_pages(array(
               'title_li' => '',
@@ -65,7 +69,9 @@
               'order' => 'asc',
               'post_status' => 'publish'
             ));
-					}?>
+          }
+
+          ?>
 
      <?php if ($children) { ?>
 						  <ul>

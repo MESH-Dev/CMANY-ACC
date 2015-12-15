@@ -223,12 +223,12 @@ if($current_week == 52 /*|| $current_year > $now_year*/ ){
 
 
 //53 WEEK EXCEPTIONS*******************************
-if($current_week == 52 && $current_year == 2015){
-	//echo "2015 exception";
+if($current_week == 52 && $current_year == 2016){
+	//echo "2016 exception";
    	$next_week = 53;
    	$last_week = 51;
-   	$render_year = 2015;
-   	$new_yr = 2015;
+   	$render_year = 2016;
+   	$new_yr = 2016;
 }
 
 if($current_week == 53){

@@ -3,15 +3,16 @@
     * Template Name: Current Exhibitions
     */
   get_header();
-  get_sidebar('mainnew');
+  //get_sidebar('mainnew');
   get_header('nav');
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" >
+<div id="page-new" class="container" >
   <!--PAGE-CONTAINER -->
+  <?php get_sidebar('mainnew') ?>
   <div id="page-container" class="new_page">
-
+    <div class="eleven columns">
 
      <!--TITLE -->
     <div class="block">
@@ -46,7 +47,7 @@
                   <div style="display:none">hahahaha</div>
   		          <h3><?php the_sub_field('block-title');?></h3>
   		          <p><?php the_sub_field('block-description');?></p>
-  		          <a class="read-more" href="<?php the_sub_field('block-link');?>" >READ MORE >></a>
+  		          <a class="read-more" href="<?php the_sub_field('block-link');?>" >READ MORE &rsaquo;&rsaquo;</a>
   		      </div>
           </a>
     	 	</div>
@@ -54,7 +55,7 @@
 
 
 
-    </div>
+    </div></div>
 
 
 

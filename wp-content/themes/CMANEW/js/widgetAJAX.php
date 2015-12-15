@@ -10,6 +10,9 @@ http://forums.devshed.com/php-development-5/month-from-week-number-35946.html
 //FUNCTION DRAW CALENDAR
 function draw_calendar($month,$year,$month_name){
 
+	$c_year = $_GET['year'];
+	//printf($c_year);
+
 	/* draw table */
 
 	$calendar = '<table cellpadding="0" cellspacing="0" class="calendar">'; 
@@ -91,8 +94,8 @@ function draw_calendar($month,$year,$month_name){
 $get_month = strtotime( "+$current_week week", mktime(0, 0, 0, 1, 1, (int)$render_year) );
 $month = date( "F" );
 $month_num = date( "n"  );
-$render_year   = 2015;
-$current_year  = 2015;
+$render_year   = date("Y");
+$current_year  = date("Y");
 
 if(isset($_POST['reload'])){
 	$getM = $_POST['curMonth'];
@@ -105,8 +108,8 @@ if(isset($_POST['reload'])){
 		$timestamp = strtotime("-1 month",$monthCheck);
 	}
 
-	$render_year   = 2015;
-	$current_year  = 2015;
+	$render_year   = date('Y', $timestamp);
+	$current_year  = date("Y");
 	$month_num     = date('n', $timestamp);
 	$current_month = date('n', $timestamp);
 	$month 		   = date('F', $timestamp);
@@ -124,8 +127,8 @@ if(isset($_GET['Syear'])){
 	$current_year = $_GET['Syear'];
 }
 
-echo "<a data-tofrom='prev' class='calTrig' id='prevMonth'><span aria-hidden='true'>&#8672;</span> <span class='sr-only'>Previous Month<span></a><h2 data-month='".$month_num."' data-year='".$render_year."'><span class='sr-only'>Calendar for </span> $month $current_year</h2><a data-tofrom='next' class='calTrig' id='nextMonth'><span aria-hidden='true'>&#8674;</span> <span class='sr-only'>Next Month</span></a>";
-echo draw_calendar($month_num,2015,$current_month);
+echo "<a data-tofrom='prev' class='calTrig' id='prevMonth'><span aria-hidden='true'>&#8672;</span> <span class='sr-only'>Previous Month<span></a><h2 data-month='".$month_num."' data-year='".$render_year."'><span class='sr-only'>Calendar for </span> $month $render_year</h2><a data-tofrom='next' class='calTrig' id='nextMonth'><span aria-hidden='true'>&#8674;</span> <span class='sr-only'>Next Month</span></a>";
+echo draw_calendar($month_num,$render_year,$current_month);
 //echo draw_calendar(8,2013);
 
 

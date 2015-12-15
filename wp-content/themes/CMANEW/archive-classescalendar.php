@@ -21,7 +21,7 @@
 
         <div class="block calendar_filter">
           <div class="cal_viewby">
-            View By:
+            <span>View By:</span>
             <a id="daily" href="<?php echo site_url(); ?>/events/?cur_month=<?php echo $nnow_month; if($new_yr){echo'&cur_year='.$new_yr;}?>&amp;view=day&amp;today=<?php echo $now_day;?>" >Dailly</a>
 
             <a class="active" id="weekly"  href="<?php echo site_url(); ?>/events/?cur_week=<?php echo $current_week;?><?php if($new_yr){echo'&cur_year='.$new_yr;}?>">Weekly</a>
@@ -30,7 +30,7 @@
 
 
           <div class="cal_browseby">
-            Browse By:            
+            <span>Browse By:</span>           
             <ul>
               <li>Age
 	<?php

@@ -20,9 +20,10 @@
 		<h3><?php echo the_title(); ?></h3>
 
 		<a href="<?php echo the_permalink(); ?>" >
-		<div class="feature-anim">
-			<?php $speakerIMG = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-			<div class="feature-img" style="background-image:url(<?php echo $speakerIMG; ?>);"></div>
+		<?php $speakerIMG = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+		<div class="feature-anim" style="background-image:url(<?php echo $speakerIMG; ?>);">
+			
+			<!-- <div class="feature-img" ></div> --><!-- style="background-image:url(<?php //echo $speakerIMG; ?>);" -->
 			<div class="feature-overlay">
 				<div class="gutter">
 					<div class="feature-date"><?php if($fields['specific_date'] != "") {  echo date('F jS',strtotime($fields['specific_date'])); } ?>

@@ -31,7 +31,7 @@
 
   	//VARS
   	$current_week = "";
-  	$current_year = 2015;
+  	$current_year = 2016;
     $current_day = "";
   	$weekrement = "";
 		$days = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
@@ -48,9 +48,9 @@
   $now_month = date('M');
   $nnow_month = date('n');
   $now_day = date('j');
-  $now_year = 2015;
+  $now_year = date('Y');
 
-	$render_year = 2015;
+	$render_year = date('Y');
 
 
 
@@ -184,10 +184,18 @@ echo $current_week + 1;
    $prevDayM = date('n', $prevDay);
    $prevDayD = date('j', $prevDay);
 
+function getIsoWeeksInYear($year) {
+    $date = new DateTime;
+    $date->setISODate($year, 53);
+    return ($date->format("W") === "53" ? 53 : 52);
+}
+$curyr =date("Y");
+$curwks = getIsoWeeksInYear($curyr);
+
 
 
 //SETUP LAST WEEK OF YEAR
-if($current_week == 52 /*|| $current_year > $now_year*/ ){
+if($current_week == $curwks /*|| $current_year > $now_year*/ ){
 
 	//echo "52nd week of the year";
 
@@ -224,12 +232,12 @@ if($current_week == 52 /*|| $current_year > $now_year*/ ){
 
 
 //53 WEEK EXCEPTIONS*******************************
-if($current_week == 52 && $current_year == 2015){
-	//echo "2015 exception";
+if($current_week == 52 && $current_year == 2016){
+	//echo "2016 exception";
    	$next_week = 53;
    	$last_week = 51;
-   	$render_year = 2015;
-   	$new_yr = 2015;
+   	$render_year = 2016;
+   	$new_yr = 2016;
 }
 
 if($current_week == 53){
@@ -266,7 +274,7 @@ if($current_week == '01' && $current_year == 2016){
   //END FUNC
 
 
-$render_year = 2015;
+$render_year = date('Y');
   //FUNCTION RENDER EVENT///////////////////////////////////////////////////////////////
   function renderEvent($start, $end, $weekday){ ?>
 

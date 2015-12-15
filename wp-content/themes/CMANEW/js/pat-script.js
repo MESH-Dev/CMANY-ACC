@@ -53,6 +53,11 @@ $(document).ready(function(){
 var bWidth = $('body').width();
 console.log(bWidth);
 
+$('#menu-main li ul.sub-menu a').hover(function(){
+  $(this).closest('li > a').addClass('active');
+},function(){$(this).closest('li a').removeClass('active')});
+
+
 //Menu helper
 //$(window).resize(function(){
 if ($(window).width() >= 768 ){
@@ -115,6 +120,8 @@ function miniCalendar(){
 
 miniCalendar();
 $(window).resize(miniCalendar);
+
+$('.calTrig').click(miniCalendar);
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::://
 
@@ -288,7 +295,7 @@ sidebarMargin();
   */
   if ($(window).width() > 767){
     //HOVER
-    $("ul.menu").hover(
+    setTimeout(function(){$("ul.menu").hover(
 
         //IN
         function(){
@@ -298,7 +305,7 @@ sidebarMargin();
             //     'height':240
             // },300);
 
-            $('header#header div.primary').css({'overflow':'visible'}).animate({'height':344}, 300);
+            $('header#header div.primary').css({'overflow':'visible'}).animate({'height':305}, 300);
             //$('#menu-main > li div').removeClass('hide').addClass("columns");
             
             setTimeout(function(){$('#header ul.sub-menu').show();}, 250);
@@ -309,7 +316,7 @@ sidebarMargin();
             //$("#header .menu li > ul").show();
 
             //LOGO
-           $(".home #sidebar-new").stop().animate({'margin-top':'449px'},300);
+           $(".home #sidebar-new").stop().animate({'margin-top':'410px'},300);
 
             //IF TOUCHSCREEN
             if ('ontouchstart' in document.documentElement) {
@@ -317,9 +324,9 @@ sidebarMargin();
             }
 
         //END IN
-        });
+        });}, 1000);
 
-        $('.close a').click(function(){
+        $('.close').click(function(){
           $('header#header div.primary').animate({'height':0}, 300);
           $('#header ul.sub-menu').hide();
           //$('#menu-main > li div').addClass('hide').removeClass('columns');
@@ -423,16 +430,19 @@ sidebarMargin();
       if (key === 9 || (key > 36 && key < 41)) {
         //alert(key);
         //$('ul.sub-menu').show();
-        $('header#header div.primary').css({'overflow':'visible'}).animate({'height':344}, 300);
+        $('header#header div.primary').css({'overflow':'visible'}).animate({'height':305}, 300);
         setTimeout(function(){$('ul.sub-menu').delay(10000).show();}, 250);       
         //$('header#header div.primary').css({'height':317});
-        $(".home #sidebar-new").stop().animate({'margin-top':'449px'},300);
-        //$('#header .menu li > ul').show();
+        $(".home #sidebar-new").stop().animate({'margin-top':'410px'},300);
+        $('.close').removeClass('hide');
+
       }
     });
 
+
+
 //Add open button to sidr nav links
-$('.sidr ul.menu > li').append('<div class="open"><i class="fa fa-fw fa-plus"></i></div>');
+$('.sidr ul.menu > li').append('<div class="open"><i class="fa fa-fw fa-angle-double-down"></i></div>');
 
 
 //Funcionality for open/close on sidr nav links
@@ -443,8 +453,8 @@ $('.sidr .open').toggle(function(){
     .removeClass('sidr-active');
   //Remove any .fa-minus classes and return to initial fa-plus class on each click
   $('.open i')
-    .removeClass('fa-minus')
-    .addClass('fa-plus');
+    .removeClass('fa-angle-double-up')
+    .addClass('fa-angle-double-down');
   //On click find the nearest ul.sub-menu and open it
   $(this)
     .closest('li')
@@ -454,8 +464,8 @@ $('.sidr .open').toggle(function(){
   //On click find the .open button and change the symbol from closed to open
   $(this)
     .find('i')
-    .removeClass('fa-plus')
-    .addClass('fa-minus');
+    .removeClass('fa-angle-double-down')
+    .addClass('fa-angle-double-up');
 },
 function(){
   //Close the .sub-menu
@@ -465,13 +475,18 @@ function(){
     .removeClass('sidr-active')
     .slideUp();;
   $(this).find('i')
-    .removeClass('fa-minus')
-    .addClass('fa-plus');
+    .removeClass('fa-angle-double-up')
+    .addClass('fa-angle-double-down');
 
 });
 
 //Create sidebar functionality @ less than 767px
 if ($(window).width() <= 767){
+
+var nav_items = $('#subMenu ul').find('li').size()
+console.log("Total li in submenu" + nav_items);
+
+if ( nav_items > 0 ){
 $('#sidebar-new #subMenu')
   .prepend('<li class="related"><span>Related <div class="open_sub"><i class="fa fa-fw fa-chevron-down"></i></span></li>') //<ul class="sub-menu-wrapper">
 $('#sidebar-new #subMenu ul').addClass('sidebar-sub hide');
@@ -494,6 +509,7 @@ $('li.related').toggle(function(){
     
 });
 }
+}
 
 if ($(window).width() <= 500){
   $('.cal_browseby').click(function(){
@@ -504,19 +520,44 @@ if ($(window).width() <= 500){
     //////////////////////////////////////CAROUSEL///////////////////////////////
     */
 
-    var slider_label = function(){$('.slide').addClass('shown');};
+    //var slider_label = function(){$('.slide').addClass('shown');};
 
     var $highlight = function() { 
     var $this = $("#carousel");
-
+    var $slideW = $('.slide').width();
+    var $windowW = $(window).width();
+    var $mLeft = $slideW - (($windowW - $slideW)/2);
     var items = $this.triggerHandler("currentVisible");     //get all visible items
     $this.children().removeClass("active");                 // remove all .active classes
-    items.filter(":eq(1)").addClass("active");              // add .active class to n-th item
-};
-    var $position = function(){
-      var cLeft = $('#carousel').left();
-      $('#carousel').css({left:cLeft - 50});
+    items.filter(":eq(1)").addClass("active"); 
+    $this.css({left:-$mLeft-2});             // add .active class to n-th item
     }
+
+    var $start_position_start = function() {
+        var $this = $("#carousel");
+        var $slideW = $('.slide').width();
+        var $windowW = $(window).width();
+        var $mLeft = $slideW - (($windowW - $slideW)/2);
+        $this.css({left:-$mLeft-2});
+    }
+
+    // $(window).resize(function(){
+    //          //var $slideW, $windowW, $mLeft;
+    //          var $slideW = $('.slide').width();
+    //          var $windowW = $(window).width();
+    //          var $mLeft = $slideW - (($windowW -  $slideW)/2);
+    //          console.log("Resized Left " + -$mLeft + "px");
+    //         console.log("Resized Slide Width = " + $slideW + "px");
+    //         console.log("Resized Window width = " + $windowW + "px");
+    //         console.log('Window Resized');
+    //         //return $mleft;
+    //          //$this.css({left:-$mLeft2});
+    // });
+
+    // var $position = function(){
+    //   var cLeft = $('#carousel').left();
+    //   $('#carousel').css({left:cLeft - 50});
+    // }
     $('#carousel').carouFredSel({
           width: '100%',
           align:'center',
@@ -533,8 +574,9 @@ if ($(window).width() <= 500){
             duration: 1000,
             timeoutDuration: 7000,
             pauseOnHover: true,
-            onAfter: $highlight, $position
+            onAfter: $highlight
           },
+          onCreate: $start_position_start,
           prev: '#prev',
           next: '#next',
           
@@ -717,18 +759,25 @@ $(document).ready(function(){
 
 	$(document).on("click",'.calTrig',function(i){
 		console.log('you did it!');
+    
+
 		$curMonth = $('#event_mini_calendar h2').attr('data-month');
 		$curYear  = $('#event_mini_calendar h2').attr('data-year');
 		$NextPrev = $(this).attr('data-tofrom');
 		$.ajax({
 			type  	: "POST",
-			url		:  "http://localhost:8888/cmany/wp-content/themes/CMANEW/js/widgetAJAX.php",
+			url		:  "/wp-content/themes/CMANEW/js/widgetAJAX.php",
 			data	: {curMonth: $curMonth, curYear: $curYear, reload:true, tofrom:$NextPrev}
 		})
 		.done(function(result) {
 			console.log('success');
 			console.log(result);
 			$('#event_mini_calendar').html(result);
+      var tWidth = $('#event_mini_calendar, #class_mini_calendar').width();
+    var cellSize = (tWidth-2)/7;
+
+    $('#event_mini_calendar td a, #event_mini_calendar td, #event_mini_calendar th, #class_mini_calendar td a, #class_mini_calendar td, #class_mini_calendar th')
+      .css({width:cellSize, height:cellSize});
 		})
 		.fail(function() {
 			console.log( "error" );

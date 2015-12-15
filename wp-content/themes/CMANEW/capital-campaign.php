@@ -239,7 +239,7 @@ $remainderStrip=str_replace(",", "", get_field('remainder'));
 <?php get_sidebar('campaign'); ?>
 
 </sidebar>
-  <div class="clear">&nbsp;</div><!--CLEAR-->
+  <div class="clear" aria-hidden="true">&nbsp;</div><!--CLEAR-->
 
   <!--END PAGE-CONTAINER -->
   </div>

@@ -17,7 +17,7 @@ while(the_repeater_field('sidebar_item')): ?>
                   <p><?php the_sub_field('sidebar_content');?></p>
 
     <?php if( get_sub_field('link_url') ) { ?>
-                    <a class="read-more" href="<?php the_sub_field('link_url'); ?>"><?php if(get_sub_field('link_text')) { echo get_sub_field('link_text'); } else { echo "Read More >>"; } ?></a>
+                    <a class="read-more" href="<?php the_sub_field('link_url'); ?>"><?php if(get_sub_field('link_text')) { echo get_sub_field('link_text'); } else { echo "Read More &rsaquo;&rsaquo;"; } ?></a>
 <?php } ?>
               </div>
 

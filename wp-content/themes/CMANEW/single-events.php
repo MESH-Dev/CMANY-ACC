@@ -1,13 +1,15 @@
 <?php
   get_header();
-  get_sidebar('mainnew');
+  //get_sidebar('mainnew');
   get_header('nav');
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" >
+<div id="page-new" class="container">
   <!--PAGE-CONTAINER -->
+  <?php get_sidebar('mainnew'); ?>
   <div id="page-container" class="new_page">
+  	<div class="eight columns">
   	<div class="block">
       <h2 class="page-title">Calendar</h2>
     </div>
@@ -18,7 +20,7 @@
 
       <!-- MAIN CONTENT DIV-->
       <div class="calendar_main_column">
-      	<a href="<?php bloginfo('url');?>/events"><button class="feedBacks">Go back</button></a>
+      	<a href="<?php bloginfo('url');?>/events"><button class="feedBacks"><span aria-hidden="true">&ltrif; </span>Go back</button></a>
 
       	<div id="event-content">
       		<div class="gutter">
@@ -44,7 +46,7 @@
 		    			$neweventLocation = str_replace(' ', '%20', $eventLocation);
 		    			$neweventDetails = str_replace(' ', '%20', $eventDetails);
 		    		?>
-		    			<li id="googleLink"><a href="http://www.google.com/calendar/event?action=TEMPLATE&amp;dates=<?php echo $startDate; ?>T<?php echo $startTime; ?>00Z%2F<?php echo $endDate; ?>T<?php echo $endTime; ?>00Z&text=<?php echo $neweventTitle; ?>&location=&details=<?php echo $neweventDetails; ?>">&#43; Google Calendar</a></li>
+		    			<li id="googleLink"><a href="http://www.google.com/calendar/event?action=TEMPLATE&amp;dates=<?php echo $startDate; ?>T<?php echo $startTime; ?>00Z%2F<?php echo $endDate; ?>T<?php echo $endTime; ?>00Z&amp;text=<?php echo $neweventTitle; ?>&amp;location=&amp;details=<?php echo $neweventDetails; ?>">&#43; Google Calendar</a></li>
 		    			<li><a href="#">iCal Import</a></li>
 		    		</ul>
 	    		</div>
@@ -202,19 +204,20 @@
 
       		</div>
       	</div>
-      	<a href="<?php bloginfo('url');?>/events"><button class="feedBacks">Go back</button></a>
+      	<a href="<?php bloginfo('url');?>/events"><button class="feedBacks"><span aria-hidden="true">&ltrif; </span>Go back</button></a>
 
-      </div>
+      </div></div>
   <?php endwhile; ?>
       <!-- Sidebar CONTENT - Related Workshops -->
+      <div class="three columns">
       <div id="event_sidebar" >
    <?php get_sidebar('events'); ?>
       </div>
+  </div>
 
 
 
-
-    <div class="clear">&nbsp;</div>
+    <div class="clear" aria-hidden="true">&nbsp;</div>
     <!--CLEAR-->
     <!--END PAGE-CONTAINER -->
   </div>

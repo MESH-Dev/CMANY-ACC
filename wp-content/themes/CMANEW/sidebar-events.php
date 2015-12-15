@@ -1,3 +1,4 @@
+
 <?php 
 while(the_repeater_field('sidebar_item')): ?>
 
@@ -10,7 +11,7 @@ while(the_repeater_field('sidebar_item')): ?>
                   <h3><?php the_sub_field('sidebar_title');?></h3>
                   <p><?php the_sub_field('sidebar_content');?></p>
              <?php if( get_sub_field('link_url') ) { ?>
-                    <a class="read-more" href="<?php the_sub_field('link_url'); ?>" title="<?php if(get_sub_field('link_text')) { echo get_sub_field('link_text'); } else { echo "Learn More"; } ?>"><?php if(get_sub_field('link_text')) { echo get_sub_field('link_text'); } else { echo "Read More >>"; } ?></a>
+                    <a class="read-more" href="<?php the_sub_field('link_url'); ?>" title="<?php if(get_sub_field('link_text')) { echo get_sub_field('link_text'); } else { echo "Learn More"; } ?>"><?php if(get_sub_field('link_text')) { echo get_sub_field('link_text'); } else { echo "Read More &rsaquo;&rsaquo;"; } ?></a>
        <?php } ?>
               </div>
 

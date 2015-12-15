@@ -8,7 +8,7 @@
 		<div class="top-search">
 			<form method="get" id="search" action="<?php echo home_url( '/' ); ?>">
         <label for="s" class="sr-only">Search</label>
-			  <input name="s" id="s" type="text" size="40" placeholder="Search Here..." />
+			  <input name="s" id="s" type="text" size="40" placeholder="Search CMANY.org..." />
 			</form>
 		</div>
     <div class="top-gateway">
@@ -39,8 +39,8 @@
       <!--PRIMARY-->
 	    <div class="primary"  >
         <div id="pcontainer">
-          <div class="sidr-close"><i class="fa fa-fw fa-close"></i></div>
-          <div class="container">
+          <div class="sidr-close">CLOSE <i class="fa fa-fw fa-close"></i></div>
+          <div class="container nav_main">
 <?php
             $defaults = array(
               'menu'            => 'Main',
@@ -53,9 +53,13 @@
           
         </div><!-- end .container -->
         </div><!-- end #pcontainer -->
-        <div class="container"><div tabindex="0" class="close hide"><a href="">Close <i class="fa fa-fw fa-close"></i></a></div></div>
+        
       </div><!-- end .primary -->
-
+<div class="container nav_close">
+  <div tabindex="0" class="close hide" aria-label="Close navigation">
+    Close <i class="fa fa-fw fa-close"></i>
+  </div>
+</div>
 
 
       <!--SECONDARY-->
@@ -74,5 +78,8 @@
 
 
 </header>
+
 </div>
+
+
     <!-- <div id="closeMenu">CLOSE</div> -->

@@ -98,8 +98,18 @@ class menu_secondary_walker extends Walker_Nav_Menu {
 //END CLASS
 }
 
-
-
+//Custom search for blog pages
+function template_chooser($template)   
+{    
+  global $wp_query;   
+  $post_type = get_query_var('post_type');   
+  if( $wp_query->is_search && $post_type == 'post' )   
+  {
+    return locate_template('search-blog.php');  //  redirect to search-blog.php
+  }   
+  return $template;   
+}
+add_filter('template_include', 'template_chooser');    
 
 
 
@@ -207,6 +217,31 @@ function redirect() {
 }
 
 
+function wp_list_categories_for_post_type($post_type, $args = '') {
+   
+    $exclude = array();
+    if (is_category() || is_tag() || is_home()){
+    // Check ALL categories for posts of given post type
+    foreach (get_categories() as $category) {
+        $posts = get_posts(array('post_type' => $post_type, 'category' => $category->cat_ID));
+
+        // If no posts found, ...
+        if (empty($posts))
+            // ...add category to exclude list
+            $exclude[] = $category->cat_ID;
+    }
+
+    // Set up args
+    if (! empty($exclude)) {
+        $args .= ('' === $args) ? '' : '&';
+        $args .= 'exclude='.implode(',', $exclude);
+    }
+
+    // List categories
+    wp_list_categories($args);
+}
+}
+
 function my_wp_nav_menu_args( $args = '' )
 {
 	$args['container'] = false;
@@ -218,7 +253,11 @@ add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 //Read more excerpt at the end of posts on archive
 function new_excerpt_more( $more ) {
-  return ' <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( '...Continue reading', 'your-text-domain' ) . '</a>';
+
+	global $post;
+	if (is_category() || is_tag() || is_home() || is_search()){
+  return ' <a class="read-more" href="' . get_permalink( $post->ID ) . '">' . __( 'Continue reading...', '' ) . '</a>';
+	}
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 //add_action( 'init', 'create_post_type' );

@@ -63,18 +63,35 @@
 	$linkYearUp = $newYear;
 	$linkYearDown = $newYear;
 
+	function getIsoWeeksInYear($year) {
+	    $date = new DateTime;
+	    $date->setISODate($year, 53);
+	    return ($date->format("W") === "53" ? 53 : 52);
+	}
+
+	$curyr =date("Y");
+	$totalwks = getIsoWeeksInYear($curyr);
 	//Leap year?
 	if($linkWeekDown == 0){
 		--$linkYearDown;
+		$totalwks = getIsoWeeksInYear($linkYearDown);
 		if(date('L', strtotime("$linkYearDown-01-01")) == 1){
-			$linkWeekDown = 53;
+			$linkWeekDown = $totalwks;
 		}else{
-			$linkWeekDown = 52;
+			$linkWeekDown = $totalwks;
 		}
 	}
-	if($linkWeekUp == 54 && $newLeap == 0 || $linkWeekUp == 53){
+	if($linkWeekUp == 53 && $totalwks == 53){
+		$linkWeekUp = 53;
+	}
+	if($linkWeekUp == 53 && $totalwks == 52){
 		$linkWeekUp = 1;
 		++$linkYearUp;
+	}
+	if($linkWeekUp == 54 && $totalwks == 53){
+		$linkWeekUp = 1;
+		$linkYearDown = $linkYearDown-1;
+		 
 	}
 
 	//Add 0 if week is single digit (NECESSARY FOR UNIX DATE CALCULATION)

@@ -16,7 +16,7 @@
 
       <!-- MAIN CONTENT DIV-->
        <div class="calendar_main_column">
-       	<a href="<?php bloginfo('url');?>/classes-calendar"><button class="feedBacks">Go back</button></a>
+       	<a href="<?php bloginfo('url');?>/classes-calendar"><button class="feedBacks"><span aria-hidden="true">&ltrif; </span>Go back</button></a>
 
       	<div id="event-content">
 

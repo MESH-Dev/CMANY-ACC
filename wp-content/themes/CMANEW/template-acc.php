@@ -3,14 +3,15 @@
 	Template Name: ACC TEST
 */
 get_header();
-get_sidebar('mainnew');
+//get_sidebar('mainnew');
 get_header('nav'); ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" >
+<div id="page-new" class="container">
   <!--PAGE-CONTAINER -->
+  <?php get_sidebar('mainnew'); ?>
   <div id="page-container" class="new_page">
-    
+    <div class="eleven columns">
 <?php while ( have_posts() ) : the_post(); ?>
 
      <!--TITLE -->
@@ -215,18 +216,19 @@ get_header('nav'); ?>
 
 
 
-      </div>
+      </div></div></div>
 
       <!-- Sidebar CONTENT -->
+      <div class="three colunns"
       <sidebar id="cma-sidebar" class="mt-10">
    <?php get_template_part( 'blocks/classes', 'filters' ); ?>
       </sidebar>
-
+  </div>
     </div>
 <?php endwhile; ?>
 
 
-    <div class="clear">&nbsp;</div>
+    <div class="clear" aria-hidden="true">&nbsp;</div>
     <!--CLEAR-->
     <!--END PAGE-CONTAINER -->
   </div>

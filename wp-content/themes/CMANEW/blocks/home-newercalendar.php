@@ -68,12 +68,13 @@
 			$dayCheck = array();
 		}
 		if($startdate == $day || isset($dayCheck) && in_array($dayCard,$dayCheck)){ $i++; ?>
-
+<a href="<?php echo get_permalink($post->ID); ?>">
 		<div class="home_event_box">
+			<h2 class="featured-workshops">Featured Workshops</h2>
 	      <h3>
-	        <a href="<?php echo get_permalink($post->ID); ?>">
+	        
 	     <?php echo get_the_title($post->ID); ?>
-	        </a>
+	       
 	      </h3>
 	      <div class="event_time" style="margin-bottom:0px; ">
 	   <?php
@@ -95,12 +96,12 @@
 	      <div class="home_event_content" style="width: 190px;">
 	   <?php //echo get_post_field('post_content', $post->ID);?>
 	        <p><?php  echo get_excerpt_by_id($post->ID); ?></p>
-	        <p class="event_more"><!-- href="<?php //echo get_permalink($post->ID); ?>" -->
+	        <p class="more"><!-- href="<?php //echo get_permalink($post->ID); ?>" -->
 	           READ MORE &rsaquo;&rsaquo;
 	        </p>
 	      </div>
 	    </div>
-
+	     </a>
 	<?php } ?>
 
 	<?php }

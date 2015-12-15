@@ -113,6 +113,39 @@
 				}
 	?>
 
+	<?php if (is_page('classes')){ 
+
+			//Adds to all pages within the /classes directory
+
+			//If needed, the numbers below will add the code to individual pages within this directory
+			//in that case, use array
+			//----------------------------
+			//76 = Wee Arts
+			//78 = After School
+			//8540 = Winter Art Colony Day Camp
+			//15807 = Saturday Studios
+			//16423 = Fall Art Colony Day Camp
+			//13674 = Spring Art Colony Day Camp
+			//10233 = Summer Art Colony Day Camp
+		?>
+
+		<!-- Facebook Pixel Code --> 
+		<script> 
+		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? 
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; 
+		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; 
+		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, 
+		document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+		fbq('init', '906580689437201'); 
+		fbq('track', "PageView");</script> 
+		<noscript><img height="1" width="1" style="display:none" 
+		src="https://www.facebook.com/tr?id=906580689437201&amp;ev=PageView&amp;noscript=1" 
+		/></noscript> 
+		<!-- End Facebook Pixel Code -->
+
+	<?php } ?>
+
 </head>
 <body <?php body_class(); ?> >
 
