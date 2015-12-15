@@ -6,7 +6,7 @@
 
 
 
-<div id="page-new" class="container post_archive">
+<div class="page-new container post_archive">
   <!--PAGE-CONTAINER -->
   <?php get_sidebar('mainnew');?>
   <div id="page-container" class="new_page">

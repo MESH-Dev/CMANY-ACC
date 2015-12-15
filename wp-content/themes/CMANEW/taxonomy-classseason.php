@@ -1,7 +1,7 @@
 <?php include('blocks/class_calendar.php'); ?>
 <?php get_header();get_sidebar('mainnew'); get_header('nav');  ?>
 
-<div id="page-new">
+<div class="page-new">
   <!--PAGE-CONTAINER -->
 
   <div class="new_page" id="page-container">

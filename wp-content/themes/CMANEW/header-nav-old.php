@@ -1,5 +1,5 @@
 <div class="top-head">
-<div id="page-new" >
+<div class="page-new" >
   <div id="page-right" role="main">
 
 		<div class="top-search">

@@ -5,7 +5,7 @@
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" class="accget">
+<div class="page-new accget">
   <!--PAGE-CONTAINER -->
   <div id="page-container" class="new_page">
   	<div class="block">

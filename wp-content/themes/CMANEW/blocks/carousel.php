@@ -37,13 +37,13 @@
 
         
 
-        <a href="#" id="prevbut" aria-label="Show previous slide"><!-- <span class="sr-only">Show Previous slide. What</span> --></a>
-        <a href="#" id="nextbut" aria-label="Show next slide"><!-- <span class="sr-only">Show Next slide. What </span> --></a>
+        <a href="#" id="prevbut" aria-label="Show previous slide"><span class="sr-only">Show Previous slide.</span></a>
+        <a href="#" id="nextbut" aria-label="Show next slide"><span class="sr-only">Show Next slide.</span></a>
       </div>
   <!--END WRAPPER-->
   </div>
   <div class="container caroufredsel-controls">
-    <a href="#" id="prevbut" aria-label="Show previous slide"><!-- <span class="sr-only">Show Previous slide. What</span> --></a>
-        <a href="#" id="nextbut" aria-label="Show next slide"><!-- <span class="sr-only">Show Next slide. What </span> --></a>
+    <a href="#" id="prevbut" aria-label="Show previous slide"><span class="sr-only">Show Previous slide.</span></a>
+        <a href="#" id="nextbut" aria-label="Show next slide"><span class="sr-only">Show Next slide.</span></a>
     <div id="pager"></div>
   </div>

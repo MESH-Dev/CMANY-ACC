@@ -8,7 +8,7 @@
 
 ?>
 <!--PAGE-NEW-->
-<div id="page-new">
+<div class="page-new">
   <!--PAGE-CONTAINER -->
 
   <div class="new_page" id="page-container">

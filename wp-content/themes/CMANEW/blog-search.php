@@ -1,26 +1,27 @@
-<?php 
+ <?php 
   get_header();
+  /* Template Name: Blog Search */
   // get_sidebar('search'); 
   get_header('nav'); 
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new"  class="container blog_search">
+<div class="page-new container blog_search">
   <!--PAGE-CONTAINER -->
   <?php get_sidebar('mainnew');?>
-  <div id="page-container" class="new_page columns eleven">
+  <div id="page-container" class="new_page">
   
-    
+    <div class="columns eight">
      <!--TITLE -->
     <div class="block">
        
         <h2 class="page-title<?php echo $currentcolor; ?>">
-          Search Results
+          Blog Search Results
         </h2>
         
     </div>
 
-
+<?php global $query_string; query_posts($query_string . '&post_type=post'); ?>
     
 
     <div class="block">
@@ -69,22 +70,43 @@
       </div>
  
 
-  
+    </div>
 
- 
+ </div>
 
       </div>
        
       <!-- Sidebar CONTENT --> 
-      <sidebar id="cma-sidebar" class="mt-10">
-<?php //get_sidebar('default'); ?>
-      </sidebar>
-      
-    </div>
+      <div class="three columns">
+
+        <div id="search-2" class="widget widget_search sidebar_search">
+          <div class="inner_container">
+            <h4 class="widgettitle">Search</h4>
+            <?php 
+            
+            ?>
+            <form role="search" method="get" id="searchform" action="<?php echo site_url( '/' ); ?>">
+                <label class="screen-reader-text" for="s">Search for:</label>
+                <input type="text" value="" name="s" id="s" placeholder="Search Our Blog...">
+                <input type="hidden" name="post_type" value="post" />
+                <input type="submit" id="searchsubmit" value="Search">
+            </form>
+          </div>
+        </div>
+        <div class="clips block">
+          <h4>Find Your Creation</h4>
+          Stopped in recently? Find your work at our CMA CLIPS gallery!
+          <a href="http://vimeo.com/cmaclips/albums">Browse CMA Clips </a>
+          <div class="sprite" id="bubble-man"></div>
+        <div class="sprite" id="man"></div></div>
+        </div>
+        
+      </div>
+  <!--   </div> -->
  
 
 
-    <div class="clear">&nbsp;</div>
+    <div class="clear" aria-hidden="true">&nbsp;</div>
     <!--CLEAR-->
     <!--END PAGE-CONTAINER -->
   </div>

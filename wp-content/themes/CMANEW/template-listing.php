@@ -8,7 +8,7 @@
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" class="container">
+<div class="page-new container">
   <!--PAGE-CONTAINER -->
   <?php get_sidebar('mainnew'); ?>
   <div id="page-container" class="new_page">
@@ -61,7 +61,7 @@
               }?>
             <a href="<?php the_sub_field('block-link');?>" target="<?php echo $target ?>">
           <?php }?>
-          <div class="subtitle">
+          <div class="subtitle" aria-has-popup="true">
             <div class="subtitle-content">
 		          <h3><?php the_sub_field('block-title');?></h3>
               <!-- <p class="learnmore">Learn More...</p> -->

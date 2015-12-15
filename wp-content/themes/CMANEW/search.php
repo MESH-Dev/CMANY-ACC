@@ -5,7 +5,7 @@
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new"  class="container site_search">
+<div class="page-new container site_search">
   <!--PAGE-CONTAINER -->
   <?php get_sidebar('mainnew');?>
   <div id="page-container" class="new_page columns eleven">

@@ -8,7 +8,7 @@
  */
 
 ?>
-<div id="page-new" >
+<div class="page-new" >
 <div id="sidebar-new">
     			<a class="home" href="<?php echo site_url(); ?>">	<img alt="Return to CMANY home" src="<?php bloginfo( 'template_url' ) ?>/images/cma-logo.jpg" /> </a>
 
@@ -58,7 +58,11 @@
             
                 wp_list_categories_for_post_type('post','&order=ASC&title_li=');
 
-          } else {
+          }elseif (is_search()){
+
+            
+
+          }else {
 
             $children = wp_list_pages(array(
               'title_li' => '',

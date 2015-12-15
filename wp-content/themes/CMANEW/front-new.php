@@ -14,7 +14,7 @@ get_header('nav');
 <?php get_template_part('blocks/carousel'); ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" class="container">
+<div class="page-new container">
 	<?php //get_sidebar('mainnew'); ?>
   <!--PAGE-CONTAINER -->
   <div id="page-container" class="homecols">

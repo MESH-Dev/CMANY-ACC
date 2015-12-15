@@ -36,7 +36,7 @@ $col4_donate = get_field('col4_donate');
 
 <!--CALENDAR-->
 <div class="block-home">
-  <!-- <h2 class="">Featured Workshops</h2> -->
+  <h2 class="featured-workshops">Featured Workshops</h2>
 <?php get_template_part( 'blocks/home', 'newercalendar' ); ?>
 </div>
 
@@ -62,7 +62,7 @@ $col4_donate = get_field('col4_donate');
 <div class="quarter three">
 
 <?php foreach($col3_blog as $row){ ?>
-<a href="<?php if($row['link'] !== ""){ echo $row['link']; } else { echo "http://blog.cmany.org";}?>">
+<a href="<?php if($row['link'] !== ""){ echo $row['link']; } else { echo "http://cmany.org/blog";}?>">
     <div class="block-home blog">
         <img alt="Visit the CMANY Blog" src="<?php bloginfo( 'template_url' )?>/images/blog_home.gif" />
       <!-- </a> -->

@@ -102,10 +102,10 @@ class menu_secondary_walker extends Walker_Nav_Menu {
 function template_chooser($template)   
 {    
   global $wp_query;   
-  $post_type = get_query_var('post_type');   
+  $post_type = $_GET['post_type'];   
   if( $wp_query->is_search && $post_type == 'post' )   
   {
-    return locate_template('search-blog.php');  //  redirect to search-blog.php
+    return locate_template('blog-search.php');  //  redirect to blog-search.php
   }   
   return $template;   
 }

@@ -8,7 +8,7 @@
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" class="container" >
+<div class="page-new container" >
   <!--PAGE-CONTAINER -->
   <?php get_sidebar('mainnew') ?>
   <div id="page-container" class="new_page">

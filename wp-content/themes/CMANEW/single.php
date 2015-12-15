@@ -5,7 +5,7 @@
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" class="container post-single">
+<div class="page-new container post-single">
   <!--PAGE-CONTAINER -->
   <?php get_sidebar('mainnew');?>
   <div id="page-container" class="new_page">

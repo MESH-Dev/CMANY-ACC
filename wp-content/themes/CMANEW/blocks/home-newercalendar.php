@@ -70,7 +70,7 @@
 		if($startdate == $day || isset($dayCheck) && in_array($dayCard,$dayCheck)){ $i++; ?>
 <a href="<?php echo get_permalink($post->ID); ?>">
 		<div class="home_event_box">
-			<h2 class="featured-workshops">Featured Workshops</h2>
+			<!-- <h2 class="featured-workshops">Featured Workshops</h2> -->
 	      <h3>
 	        
 	     <?php echo get_the_title($post->ID); ?>

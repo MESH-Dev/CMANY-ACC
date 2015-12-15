@@ -2,7 +2,7 @@
   <div class="mobile-logo desktop-hide">
     <a href="<?php echo site_url(); ?>">  <img alt="Return to CMANY home" src="<?php bloginfo( 'template_url' ) ?>/images/cma-logo.jpg" /> </a>
   </div>
-<div id="page-new" >
+<div class="page-new" >
   <div class="top-content container">
   <div id="page-right" role="main">
 		<div class="top-search">

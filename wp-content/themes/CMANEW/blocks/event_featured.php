@@ -54,12 +54,13 @@
 					</div>
 
 				</div>
-			</div>
-			<div class="feature-excerpt">
+				<div class="feature-excerpt">
 				<div class="gutter">
 					<?php the_excerpt(); ?>
 				</div>
 			</div>
+			</div>
+			
 		</div>
 		</a>
 	</div>

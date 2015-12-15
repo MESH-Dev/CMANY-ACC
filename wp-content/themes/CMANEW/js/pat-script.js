@@ -53,9 +53,17 @@ $(document).ready(function(){
 var bWidth = $('body').width();
 console.log(bWidth);
 
-$('#menu-main li ul.sub-menu a').hover(function(){
-  $(this).closest('li > a').addClass('active');
-},function(){$(this).closest('li a').removeClass('active')});
+// Remove empty <p> tags
+
+$('#page-container p').each(function(){var $this = $(this);if($this.html().replace(/\s|&nbsp;/g,'').length == 0)$this.remove();});
+
+$('iframe').unwrap('p');
+//$('.the-content p').each(function(){var $this = $(this);if($this.html().replace(/\s|&nbsp;/g,'').length == 0)$this.remove();});
+
+
+// $('#menu-main li ul.sub-menu a').hover(function(){
+//   $(this).closest('li > a').addClass('active');
+// },function(){$(this).closest('li a').removeClass('active')});
 
 
 //Menu helper

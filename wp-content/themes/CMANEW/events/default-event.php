@@ -12,7 +12,7 @@ get_header('navnew2');
  ?>
  
  <!--PAGE-NEW-->
-<div id="page-new" >
+<div class="page-new" >
   
   <!--PAGE-CONTAINER -->
   <div id="page-container" class="new_page">

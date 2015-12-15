@@ -27,13 +27,14 @@
 					?></div>
 					<div class="feature-teaser"><?php echo $fields['event_teaser']; ?></div>
 				</div>
-			</div>
-			<div class="feature-excerpt">
+				<div class="feature-excerpt">
 				<div class="gutter">
 					<?php the_excerpt(); ?>
 				</div>
 			</div>
 		</div>
+			</div>
+			
 	</div>
 
   

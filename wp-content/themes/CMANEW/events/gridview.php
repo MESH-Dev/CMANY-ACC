@@ -26,7 +26,7 @@ $tribe_ecp = TribeEvents::instance();
 
   
 <!--PAGE-NEW-->
-<div id="page-new" >
+<div class="page-new" >
   
   <!--PAGE-CONTAINER -->
   <div id="page-container" class="new_page">

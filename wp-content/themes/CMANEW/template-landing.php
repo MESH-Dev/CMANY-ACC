@@ -8,7 +8,7 @@
 ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" class="container">
+<div class="page-new container">
 
   <?php get_sidebar('mainnew'); ?>
   <!--PAGE-CONTAINER -->
@@ -62,7 +62,7 @@
   		     <?php the_sub_field('block-description');?>
 
            <?php if(get_sub_field('block-link') != ''){ ?>
-  		          <p class="read-more">LEARN MORE >></p><!-- href="<?php //the_sub_field('block-link');?>" -->
+  		          <p class="read-more">LEARN MORE &raquo;&raquo;</p><!-- href="<?php //the_sub_field('block-link');?>" -->
                 <!-- <div class="close">Close</div> -->
            <?php } ?>
               </div>

@@ -7,7 +7,7 @@ get_header();
 get_header('nav'); ?>
 
 <!--PAGE-NEW-->
-<div id="page-new" class="container accget" >
+<div class="page-new container accget" >
   <!--PAGE-CONTAINER -->
 
   <?php get_sidebar('mainnew') ?>
@@ -205,7 +205,7 @@ get_header('nav'); ?>
 
 			<div class="two_third"><h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 			<p><?php the_content(); ?></p></div><p></p>
-			<p></p><div class="one_third last_column"><p>&nbsp;</p>
+			<p></p><div class="one_third last_column"><!-- <p>&nbsp;</p> -->
 			<?php $post_id = get_the_ID();
 				$startMeta = get_post_meta( $post_id, 'start_date_TEST', true );
 				$endMeta = get_post_meta( $post_id, 'end_date_TEST', true );

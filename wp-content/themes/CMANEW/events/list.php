@@ -21,7 +21,7 @@ $isClosed = false;
 <!--</div> #page-container </div><!-- #page-right -->
 
 <!--PAGE-NEW-->
-<div id="page-new" >
+<div class="page-new" >
   
   <!--PAGE-CONTAINER -->
   <div id="page-container" class="new_page">
